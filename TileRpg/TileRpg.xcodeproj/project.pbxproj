@@ -138,6 +138,7 @@
 		90D8C28E15A4284A00BB5914 /* gubbeBak.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C28A15A4284A00BB5914 /* gubbeBak.png */; };
 		90D8C28F15A4284A00BB5914 /* gubbeSidan.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C28B15A4284A00BB5914 /* gubbeSidan.png */; };
 		90D8C29015A4284A00BB5914 /* gubbeSidan2.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C28C15A4284A00BB5914 /* gubbeSidan2.png */; };
+		90D8C29215A42EEC00BB5914 /* meta-tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C29115A42EEC00BB5914 /* meta-tiles.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -407,6 +408,7 @@
 		90D8C28A15A4284A00BB5914 /* gubbeBak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gubbeBak.png; sourceTree = "<group>"; };
 		90D8C28B15A4284A00BB5914 /* gubbeSidan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gubbeSidan.png; sourceTree = "<group>"; };
 		90D8C28C15A4284A00BB5914 /* gubbeSidan2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gubbeSidan2.png; sourceTree = "<group>"; };
+		90D8C29115A42EEC00BB5914 /* meta-tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "meta-tiles.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -843,6 +845,7 @@
 		90D8C27E15A427DA00BB5914 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
+				90D8C29115A42EEC00BB5914 /* meta-tiles.png */,
 				90D8C28115A4282D00BB5914 /* foregroundW1.png */,
 				90D8C28215A4282D00BB5914 /* landskapem.png */,
 				90D8C28415A4282D00BB5914 /* World1.tmx */,
@@ -931,6 +934,7 @@
 				90D8C28E15A4284A00BB5914 /* gubbeBak.png in Resources */,
 				90D8C28F15A4284A00BB5914 /* gubbeSidan.png in Resources */,
 				90D8C29015A4284A00BB5914 /* gubbeSidan2.png in Resources */,
+				90D8C29215A42EEC00BB5914 /* meta-tiles.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1110,6 +1114,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1129,6 +1134,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = TileRpg/Prefix.pch;

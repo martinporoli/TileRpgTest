@@ -51,7 +51,7 @@
         tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"World1.tmx"];
         background = [tileMap layerNamed:@"landskapem.png"];
         foreground = [tileMap layerNamed:@"foregroundW1.png"];
-        meta = [tileMap layerNamed:@"???"];
+        meta = [tileMap layerNamed:@"meta-tiles.png"];
         player = [CCSprite spriteWithFile:@"gubbe.png"];
         
         CCTMXObjectGroup *objects = [tileMap objectGroupNamed:@"Objects"];
@@ -67,7 +67,7 @@
         [self setViewpointCenter:player.position];
         
         [self addChild:tileMap z:-1];
-        
+        self.isTouchEnabled = YES;
     }
 	return self;
 }
@@ -100,6 +100,58 @@
     self.position = viewPoint;
     
 }
+
+-(void) registerWithTouchDispatcher
+{
+	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self 
+                                                     priority:0 swallowsTouches:YES];
+}
+
+-(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+{
+	return YES;
+}
+
+-(void)setPlayerPosition:(CGPoint)position {
+	player.position = position;
+}
+
+-(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    
+    CGPoint touchLocation = [touch locationInView: [touch view]];		
+    touchLocation = [[CCDirector sharedDirector] convertToGL: touchLocation];
+    touchLocation = [self convertToNodeSpace:touchLocation];
+    
+    CGPoint playerPos = player.position;
+    CGPoint diff = ccpSub(touchLocation, playerPos);
+    if (abs(diff.x) > abs(diff.y)) {
+        if (diff.x > 0) {
+            playerPos.x += tileMap.tileSize.width;
+        } else {
+            playerPos.x -= tileMap.tileSize.width; 
+        }    
+    } else {
+        if (diff.y > 0) {
+            playerPos.y += tileMap.tileSize.height;
+        } else {
+            playerPos.y -= tileMap.tileSize.height;
+        }
+    }
+    
+    if (playerPos.x <= (tileMap.mapSize.width * tileMap.tileSize.width) &&
+        playerPos.y <= (tileMap.mapSize.height * tileMap.tileSize.height) &&
+        playerPos.y >= 0 &&
+        playerPos.x >= 0 ) 
+    {
+        [self setPlayerPosition:playerPos];
+    }
+    
+    [self setViewpointCenter:player.position];
+    
+}
+
+
 #pragma mark GameKit delegate
 
 -(void) achievementViewControllerDidFinish:(GKAchievementViewController *)viewController
