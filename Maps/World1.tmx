@@ -10,6 +10,11 @@
     <property name="Collidable" value="True"/>
    </properties>
   </tile>
+  <tile id="2">
+   <properties>
+    <property name="jump" value="True"/>
+   </properties>
+  </tile>
   <tile id="11">
    <properties>
     <property name="NewWorld" value="True"/>
@@ -30,7 +35,7 @@
    eJztmMsOwiAQRbHpTmWnsNP//0rbBQkh3IGhA7RmFjfx0WnvmZetizFmUalUKpVKpVJdWreMZntCvtbC92djSb04hu8ZLEe8UULco/zbjmzSPCP8jeDZ4z1R+xbZQq7iz9PrjqjHfdOjQk8Gh2RdRvR8LUePmT/Sa2fiGFUPR8RdiUOyHukMPxv9eyI/Ie+9ONDvHbWfEGfqMee3B8famPcaBiRLHDd7HlDuaxXfO0tyoOPTHqfOx9nbUvtJMqbGq4T3Fk+cOG7Oe9Qjfu+j1yinNTy5nS5ZCyp3aIZRfHqPW3t+FCfJkZvTUjx1DWrupeuT69vSfuSwzOLIsZTq0tq/PVmCB26PjWY50hPU82vpPNL/oeyxr01vg/sfzQraw46ZOymOz6ZvY1049eD0F5cJ1Rc9R6ReWjh61MYXzsXJ2cjdk8pGuafm7+wc3J6t5Qg5CZrF1SoHNNuXFMtsTyrVv+sHUHIV1w==
   </data>
  </layer>
- <layer name="Meta" width="50" height="50" opacity="0.3">
+ <layer name="Meta" width="50" height="50" opacity="0.37">
   <data encoding="base64" compression="zlib">
    eJztlsEKAyEMRP1aey39/0PpoSBiJlEn6koCQ9fuGuclumxOKeVQKBQKhUKhwzUS9fw6z6kcrLw7ObTnevvqzcHeeztYvPxqscr/KrbTe7Dy7KTE59FqhfhW9OPVIVQjy34+ZW+VHPUaHv3wYsrCdelVmjfj+waOW/rx+22d1VH/2n71PB+t0N5JyEc51p5hcDDDmvMJHLPz2RzW9xurLqxzMTNHGiOvDO8j9bX8n6p7iIPNVK/RGiPfyOM/pO8vj35oIdUNcVjyr+aQ1pXu19e9edm9Ql4RS4vLkwPlbV1L62qeLOHVBwvrKSxSnnL8FA7kveesWP2wGSQOxOLJUcZ7gEPzh+aNcFjW7+Ww1keKWQ4P3cAxGpYcn41c7Hrs9sVi2e0pFLpdX3BYtAw=
   </data>
