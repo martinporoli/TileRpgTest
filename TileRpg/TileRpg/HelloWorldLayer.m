@@ -14,7 +14,44 @@
 #import "AppDelegate.h"
 
 #pragma mark - HelloWorldLayer
-
+@implementation StatLayer
+{
+    CCLayer * layer;
+    CCSprite * ruta;
+    CCLabelTTF * statLabel;
+    CCLabelTTF * Int;
+    CCLabelTTF * Str;
+    CCLabelTTF * Cha;
+    CCLabelTTF * Money;
+}
+-(id) init
+{
+    if (self = [super init])
+    {
+        
+        ruta=[CCSprite spriteWithFile:@"statRuta.png"];
+        statLabel=[CCLabelTTF labelWithString:@"" dimensions:CGSizeMake(300, 300) hAlignment:CCTextAlignmentLeft lineBreakMode:CCLineBreakModeMiddleTruncation fontName:@"Verdana-Bold" fontSize:25];
+        statLabel.color=ccc3(0,0,0);
+        [self addChild:ruta];
+        [self addChild:statLabel];
+        
+        CGSize size = [[CCDirector sharedDirector] winSize];
+        [ruta setScaleX: size.width/1000];
+        [ruta setScaleY: size.height/1000];
+        [statLabel setScaleX: size.width/1000];
+        [statLabel setScaleY: size.height/1000];
+        
+    }
+    return self;
+}
+-(void)showRuta:(CGPoint)point:(int)newMoney:(int)newInt:(int)newStr:(int)newCha
+{
+    NSString * statString = [NSString stringWithFormat:@"Money: %i\nInt: %i\nStr: %i\nCha: %i",newMoney,newInt,newStr,newCha];
+    [statLabel setString:statString];
+    ruta.position=point;
+    statLabel.position=point;
+}
+@end
 // HelloWorldLayer implementation
 @implementation HelloWorldLayer
 {
@@ -23,7 +60,10 @@
     CCTMXLayer * foreground;
     CCTMXLayer * meta;
     CCSprite *player;
-    int playerWalk;
+    int playerWalk,jumpAble,chestMoney;
+    int money,Int,Str,Cha;
+    StatLayer * stats;
+    CGPoint viewPoint;
 }
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
@@ -48,7 +88,14 @@
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if( (self=[super init]) ) {
-		
+        money=0;
+        Int=0;
+        Str=0;
+        Cha=0;
+        
+        stats = [StatLayer node];
+        [self addChild:stats];
+        
         tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"World1.tmx"];
         background = [tileMap layerNamed:@"background"];
         foreground = [tileMap layerNamed:@"foreground"];
@@ -103,9 +150,9 @@
     CGPoint actualPosition = ccp(x, y);
     
     CGPoint centerOfView = ccp(winSize.width/2, winSize.height/2);
-    CGPoint viewPoint = ccpSub(centerOfView, actualPosition);
+    viewPoint = ccpSub(centerOfView, actualPosition);
     self.position = viewPoint;
-    
+    [stats showRuta:ccp(x+winSize.width/3,y+winSize.height/3):money:Int:Str:Cha];
 }
 
 -(void) registerWithTouchDispatcher
@@ -125,9 +172,35 @@
     if (tileGid) {
         NSDictionary *properties = [tileMap propertiesForGID:tileGid];
         if (properties) {
+            NSString *coin = [properties valueForKey:@"Coin"];
+            if (coin && [coin compare:@"True"] == NSOrderedSame) {
+                if(chestMoney<5)
+                {
+                    money+=100;
+                    chestMoney++;
+                }
+                else {
+                    return;
+                }
+            }
             NSString *collision = [properties valueForKey:@"Collidable"];
             if (collision && [collision compare:@"True"] == NSOrderedSame) {
                 return;
+            }
+            NSString *jump = [properties valueForKey:@"jump"];
+            if (jump && [jump compare:@"True"] == NSOrderedSame) {
+                if(jumpAble==0)
+                {
+                    return;
+                }
+                else{
+                    
+                }
+            }
+            
+            NSString *newW = [properties valueForKey:@"NewWorld"];
+            if (newW && [newW compare:@"True"] == NSOrderedSame) {
+                
             }
         }
     }
@@ -145,56 +218,56 @@
     CGPoint diff = ccpSub(touchLocation, playerPos);
     if (abs(diff.x) > abs(diff.y)) {
         if (diff.x > 0) {
+            jumpAble=0;
+            playerPos.x += tileMap.tileSize.width;
             if(playerWalk==0)
             {
-                playerPos.x += tileMap.tileSize.width;
                 [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeSidan.png"]];
                 playerWalk++;
             }
             else if(playerWalk==1)
             {
-                playerPos.x += tileMap.tileSize.width;
                 [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeSidan2.png"]];
                 playerWalk=0;
             }
         } else {
+            jumpAble=0;
+            playerPos.x -= tileMap.tileSize.width;
             if(playerWalk==0)
             {
-                playerPos.x -= tileMap.tileSize.width;
                 [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeSidanLeft.png"]];
                 playerWalk++;
             }
             else if(playerWalk==1)
             {
-                playerPos.x -= tileMap.tileSize.width;
                 [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeSidanLeft2.png"]];
                 playerWalk=0;
             }
         }    
     } else {
         if (diff.y > 0) {
+            jumpAble=0;
+            playerPos.y += tileMap.tileSize.height;
             if(playerWalk==0)
             {
-                playerPos.y += tileMap.tileSize.height;
                 [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeBak1.png"]];
                 playerWalk++;
             }
             else if(playerWalk==1)
             {
-                playerPos.y += tileMap.tileSize.height;
                 [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeBak2.png"]];
                 playerWalk=0;
             }
         } else {
+            jumpAble=1;
+            playerPos.y -= tileMap.tileSize.height;
             if(playerWalk==0)
             {
-                playerPos.y -= tileMap.tileSize.height;
                 [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbe1.png"]];
                 playerWalk++;
             }
             else if(playerWalk==1)
             {
-                playerPos.y -= tileMap.tileSize.height;
                 [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbe2.png"]];
                 playerWalk=0;
             }
@@ -207,6 +280,7 @@
         playerPos.x >= 0 ) 
     {
         [self setPlayerPosition:playerPos];
+        
     }
     
     [self setViewpointCenter:player.position];
