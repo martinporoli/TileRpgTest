@@ -19,9 +19,10 @@
 @implementation HelloWorldLayer
 {
     CCTMXTiledMap * tileMap;
-    CCTMXLayer * Background;
-    CCTMXLayer * Foreground;
-    CCTMXLayer * Meta;
+    CCTMXLayer * background;
+    CCTMXLayer * foreground;
+    CCTMXLayer * meta;
+    CCSprite *player;
 }
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
@@ -47,6 +48,25 @@
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if( (self=[super init]) ) {
 		
+        tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"World1.tmx"];
+        background = [tileMap layerNamed:@"landskapem.png"];
+        foreground = [tileMap layerNamed:@"foregroundW1.png"];
+        meta = [tileMap layerNamed:@"???"];
+        player = [CCSprite spriteWithFile:@"gubbe.png"];
+        
+        CCTMXObjectGroup *objects = [tileMap objectGroupNamed:@"Objects"];
+        NSAssert(objects != nil, @"'Objects' object group not found");
+        NSMutableDictionary *spawnPoint = [objects objectNamed:@"SpawnPoint"];        
+        NSAssert(spawnPoint != nil, @"SpawnPoint object not found");
+        int x = [[spawnPoint valueForKey:@"x"] intValue];
+        int y = [[spawnPoint valueForKey:@"y"] intValue];
+        
+        player.position = ccp(x, y);
+        [self addChild:player]; 
+        
+        [self setViewpointCenter:player.position];
+        
+        [self addChild:tileMap z:-1];
         
     }
 	return self;
@@ -63,6 +83,23 @@
 	[super dealloc];
 }
 
+-(void)setViewpointCenter:(CGPoint) position {
+    
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    
+    int x = MAX(position.x, winSize.width / 2);
+    int y = MAX(position.y, winSize.height / 2);
+    x = MIN(x, (tileMap.mapSize.width * tileMap.tileSize.width) 
+            - winSize.width / 2);
+    y = MIN(y, (tileMap.mapSize.height * tileMap.tileSize.height) 
+            - winSize.height/2);
+    CGPoint actualPosition = ccp(x, y);
+    
+    CGPoint centerOfView = ccp(winSize.width/2, winSize.height/2);
+    CGPoint viewPoint = ccpSub(centerOfView, actualPosition);
+    self.position = viewPoint;
+    
+}
 #pragma mark GameKit delegate
 
 -(void) achievementViewControllerDidFinish:(GKAchievementViewController *)viewController
