@@ -21,7 +21,7 @@
     CCTMXTiledMap * tileMap;
     CCTMXLayer * Background;
     CCTMXLayer * Foreground;
-    
+    CCTMXLayer * Meta;
 }
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
