@@ -162,22 +162,42 @@
             {
                 playerPos.x -= tileMap.tileSize.width;
                 [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeSidanLeft.png"]];
-                [player flipX];
                 playerWalk++;
             }
             else if(playerWalk==1)
             {
                 playerPos.x -= tileMap.tileSize.width;
                 [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeSidanLeft2.png"]];
-                [player flipX];
                 playerWalk=0;
             }
         }    
     } else {
         if (diff.y > 0) {
-            playerPos.y += tileMap.tileSize.height;
+            if(playerWalk==0)
+            {
+                playerPos.y += tileMap.tileSize.height;
+                [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeBak1.png"]];
+                playerWalk++;
+            }
+            else if(playerWalk==1)
+            {
+                playerPos.y += tileMap.tileSize.height;
+                [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeBak2.png"]];
+                playerWalk=0;
+            }
         } else {
-            playerPos.y -= tileMap.tileSize.height;
+            if(playerWalk==0)
+            {
+                playerPos.y -= tileMap.tileSize.height;
+                [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbe1.png"]];
+                playerWalk++;
+            }
+            else if(playerWalk==1)
+            {
+                playerPos.y -= tileMap.tileSize.height;
+                [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbe2.png"]];
+                playerWalk=0;
+            }
         }
     }
     
