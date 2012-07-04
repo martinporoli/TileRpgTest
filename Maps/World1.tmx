@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="32" tileheight="32">
  <tileset firstgid="1" name="landskapem" tilewidth="32" tileheight="32">
-  <image source="landskapem.png" width="320" height="320"/>
+  <image source="../../landskapem.png" width="320" height="320"/>
  </tileset>
  <tileset firstgid="101" name="meta-tiles" tilewidth="32" tileheight="32">
-  <image source="meta-tiles.png" width="320" height="320"/>
+  <image source="../../meta-tiles.png" width="320" height="320"/>
   <tile id="1">
    <properties>
     <property name="Collidable" value="True"/>
@@ -22,14 +22,8 @@
    </properties>
   </tile>
  </tileset>
- <tileset firstgid="201" name="foregroundW" tilewidth="32" tileheight="32">
-  <image source="foregroundW.png" width="62" height="64"/>
- </tileset>
- <tileset firstgid="203" name="foregroundW1" tilewidth="32" tileheight="32">
-  <image source="foregroundW1.png" width="62" height="64"/>
- </tileset>
- <tileset firstgid="205" name="foregroundW1" tilewidth="32" tileheight="32">
-  <image source="foregroundW1.png" width="62" height="64"/>
+ <tileset firstgid="201" name="foregroundW1" tilewidth="32" tileheight="32">
+  <image source="../../foregroundW1.png" width="62" height="64"/>
  </tileset>
  <layer name="background" width="50" height="50">
   <data encoding="base64" compression="zlib">
@@ -43,7 +37,14 @@
  </layer>
  <layer name="foreground" width="50" height="50">
   <data encoding="base64" compression="zlib">
-   eJztzjEBAAAEADD9u5FJAo+DZ0uwCAAAAAAAAACY5XcAWKvvAMCxBiKdAZw=
+   eJztzjEBAAAEADD9m5FKAo+DZ0uwCAAAAAAAAACY5XcAWKvvAMCxBuvOAZQ=
   </data>
  </layer>
+ <objectgroup name="Objects" width="50" height="50">
+  <object name="SpawnPoint" x="272" y="1295">
+   <properties>
+    <property name="playerSpawn" value=""/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>
