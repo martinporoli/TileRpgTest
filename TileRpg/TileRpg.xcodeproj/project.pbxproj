@@ -133,12 +133,14 @@
 		90D8C27315A426A000BB5914 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D8C27215A426A000BB5914 /* HelloWorldLayer.m */; };
 		90D8C28515A4282D00BB5914 /* foregroundW1.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C28115A4282D00BB5914 /* foregroundW1.png */; };
 		90D8C28615A4282D00BB5914 /* landskapem.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C28215A4282D00BB5914 /* landskapem.png */; };
-		90D8C28815A4282D00BB5914 /* World1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C28415A4282D00BB5914 /* World1.tmx */; };
 		90D8C28D15A4284A00BB5914 /* gubbe.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C28915A4284A00BB5914 /* gubbe.png */; };
 		90D8C28E15A4284A00BB5914 /* gubbeBak.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C28A15A4284A00BB5914 /* gubbeBak.png */; };
 		90D8C28F15A4284A00BB5914 /* gubbeSidan.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C28B15A4284A00BB5914 /* gubbeSidan.png */; };
-		90D8C29015A4284A00BB5914 /* gubbeSidan2.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C28C15A4284A00BB5914 /* gubbeSidan2.png */; };
 		90D8C29215A42EEC00BB5914 /* meta-tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C29115A42EEC00BB5914 /* meta-tiles.png */; };
+		90D8C29615A4341200BB5914 /* World1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C29515A4341200BB5914 /* World1.tmx */; };
+		90D8C29A15A4374600BB5914 /* gubbeSidan2.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C29715A4374600BB5914 /* gubbeSidan2.png */; };
+		90D8C29B15A4374600BB5914 /* gubbeSidanLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C29815A4374600BB5914 /* gubbeSidanLeft.png */; };
+		90D8C29C15A4374600BB5914 /* gubbeSidanLeft2.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C29915A4374600BB5914 /* gubbeSidanLeft2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -403,12 +405,14 @@
 		90D8C27215A426A000BB5914 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		90D8C28115A4282D00BB5914 /* foregroundW1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foregroundW1.png; sourceTree = "<group>"; };
 		90D8C28215A4282D00BB5914 /* landskapem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landskapem.png; sourceTree = "<group>"; };
-		90D8C28415A4282D00BB5914 /* World1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = World1.tmx; sourceTree = "<group>"; };
 		90D8C28915A4284A00BB5914 /* gubbe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gubbe.png; sourceTree = "<group>"; };
 		90D8C28A15A4284A00BB5914 /* gubbeBak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gubbeBak.png; sourceTree = "<group>"; };
 		90D8C28B15A4284A00BB5914 /* gubbeSidan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gubbeSidan.png; sourceTree = "<group>"; };
-		90D8C28C15A4284A00BB5914 /* gubbeSidan2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gubbeSidan2.png; sourceTree = "<group>"; };
 		90D8C29115A42EEC00BB5914 /* meta-tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "meta-tiles.png"; sourceTree = "<group>"; };
+		90D8C29515A4341200BB5914 /* World1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = World1.tmx; sourceTree = "<group>"; };
+		90D8C29715A4374600BB5914 /* gubbeSidan2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gubbeSidan2.png; sourceTree = "<group>"; };
+		90D8C29815A4374600BB5914 /* gubbeSidanLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gubbeSidanLeft.png; sourceTree = "<group>"; };
+		90D8C29915A4374600BB5914 /* gubbeSidanLeft2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gubbeSidanLeft2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -848,7 +852,7 @@
 				90D8C29115A42EEC00BB5914 /* meta-tiles.png */,
 				90D8C28115A4282D00BB5914 /* foregroundW1.png */,
 				90D8C28215A4282D00BB5914 /* landskapem.png */,
-				90D8C28415A4282D00BB5914 /* World1.tmx */,
+				90D8C29515A4341200BB5914 /* World1.tmx */,
 			);
 			name = Maps;
 			sourceTree = "<group>";
@@ -859,7 +863,9 @@
 				90D8C28915A4284A00BB5914 /* gubbe.png */,
 				90D8C28A15A4284A00BB5914 /* gubbeBak.png */,
 				90D8C28B15A4284A00BB5914 /* gubbeSidan.png */,
-				90D8C28C15A4284A00BB5914 /* gubbeSidan2.png */,
+				90D8C29715A4374600BB5914 /* gubbeSidan2.png */,
+				90D8C29815A4374600BB5914 /* gubbeSidanLeft.png */,
+				90D8C29915A4374600BB5914 /* gubbeSidanLeft2.png */,
 			);
 			name = Pics;
 			sourceTree = "<group>";
@@ -929,12 +935,14 @@
 				90D8C24E15A426A000BB5914 /* ChangeLog in Resources */,
 				90D8C28515A4282D00BB5914 /* foregroundW1.png in Resources */,
 				90D8C28615A4282D00BB5914 /* landskapem.png in Resources */,
-				90D8C28815A4282D00BB5914 /* World1.tmx in Resources */,
 				90D8C28D15A4284A00BB5914 /* gubbe.png in Resources */,
 				90D8C28E15A4284A00BB5914 /* gubbeBak.png in Resources */,
 				90D8C28F15A4284A00BB5914 /* gubbeSidan.png in Resources */,
-				90D8C29015A4284A00BB5914 /* gubbeSidan2.png in Resources */,
 				90D8C29215A42EEC00BB5914 /* meta-tiles.png in Resources */,
+				90D8C29615A4341200BB5914 /* World1.tmx in Resources */,
+				90D8C29A15A4374600BB5914 /* gubbeSidan2.png in Resources */,
+				90D8C29B15A4374600BB5914 /* gubbeSidanLeft.png in Resources */,
+				90D8C29C15A4374600BB5914 /* gubbeSidanLeft2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

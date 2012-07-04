@@ -23,6 +23,7 @@
     CCTMXLayer * foreground;
     CCTMXLayer * meta;
     CCSprite *player;
+    int playerWalk;
 }
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
@@ -49,10 +50,11 @@
 	if( (self=[super init]) ) {
 		
         tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"World1.tmx"];
-        background = [tileMap layerNamed:@"landskapem.png"];
-        foreground = [tileMap layerNamed:@"foregroundW1.png"];
-        meta = [tileMap layerNamed:@"meta-tiles.png"];
+        background = [tileMap layerNamed:@"background"];
+        foreground = [tileMap layerNamed:@"foreground"];
+        meta = [tileMap layerNamed:@"Meta"];
         player = [CCSprite spriteWithFile:@"gubbe.png"];
+        meta.visible=NO;
         
         CCTMXObjectGroup *objects = [tileMap objectGroupNamed:@"Objects"];
         NSAssert(objects != nil, @"'Objects' object group not found");
@@ -65,7 +67,6 @@
         [self addChild:player]; 
         
         [self setViewpointCenter:player.position];
-        
         [self addChild:tileMap z:-1];
         self.isTouchEnabled = YES;
     }
@@ -81,6 +82,12 @@
 	
 	// don't forget to call "super dealloc"
 	[super dealloc];
+}
+
+- (CGPoint)tileCoordForPosition:(CGPoint)position {
+    int x = position.x / tileMap.tileSize.width;
+    int y = ((tileMap.mapSize.height * tileMap.tileSize.height) - position.y) / tileMap.tileSize.height;
+    return ccp(x, y);
 }
 
 -(void)setViewpointCenter:(CGPoint) position {
@@ -113,7 +120,18 @@
 }
 
 -(void)setPlayerPosition:(CGPoint)position {
-	player.position = position;
+	CGPoint tileCoord = [self tileCoordForPosition:position];
+    int tileGid = [meta tileGIDAt:tileCoord];
+    if (tileGid) {
+        NSDictionary *properties = [tileMap propertiesForGID:tileGid];
+        if (properties) {
+            NSString *collision = [properties valueForKey:@"Collidable"];
+            if (collision && [collision compare:@"True"] == NSOrderedSame) {
+                return;
+            }
+        }
+    }
+    player.position = position;
 }
 
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
@@ -127,9 +145,33 @@
     CGPoint diff = ccpSub(touchLocation, playerPos);
     if (abs(diff.x) > abs(diff.y)) {
         if (diff.x > 0) {
-            playerPos.x += tileMap.tileSize.width;
+            if(playerWalk==0)
+            {
+                playerPos.x += tileMap.tileSize.width;
+                [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeSidan.png"]];
+                playerWalk++;
+            }
+            else if(playerWalk==1)
+            {
+                playerPos.x += tileMap.tileSize.width;
+                [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeSidan2.png"]];
+                playerWalk=0;
+            }
         } else {
-            playerPos.x -= tileMap.tileSize.width; 
+            if(playerWalk==0)
+            {
+                playerPos.x -= tileMap.tileSize.width;
+                [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeSidanLeft.png"]];
+                [player flipX];
+                playerWalk++;
+            }
+            else if(playerWalk==1)
+            {
+                playerPos.x -= tileMap.tileSize.width;
+                [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeSidanLeft2.png"]];
+                [player flipX];
+                playerWalk=0;
+            }
         }    
     } else {
         if (diff.y > 0) {
