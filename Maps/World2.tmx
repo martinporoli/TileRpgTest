@@ -54,6 +54,11 @@
     <property name="Collidable" value="True"/>
    </properties>
   </tile>
+  <tile id="22">
+   <properties>
+    <property name="World1" value="True"/>
+   </properties>
+  </tile>
  </tileset>
  <layer name="background" width="50" height="50">
   <data encoding="base64" compression="zlib">
@@ -65,9 +70,16 @@
    eJztzqERADAIADGWhev+E9QzAAgS9+4jAAAAgCuq9Vu5AABgWm4PAAAADPnLWQE0
   </data>
  </layer>
- <layer name="Meta" width="50" height="50" opacity="0.63">
+ <layer name="Meta" width="50" height="50" opacity="0.59">
   <data encoding="base64" compression="zlib">
-   eJztlt0OwyAIhX3idbfb7rYXX3rRxDSicABF45eYNi0Cxx80pZSOrEUByeXInq1272cxBlScmt9SXMq+Zld61zSJxlYeHFqxOX4kOqT03Bte+zHaHkdYQcNms9msgMVdw7NpdERBoyMSiA5vkLUk1dGDUr4P4juSW08dUjtLHSNqDzc3xPa0+6X5dYwgug6vc1Ab04sI82GhUauDGuve576FjtI/6rsXM81HzdeI/VG7W6D6a2PMsY0ClRtHx6gaW6Kmo3WnLOX+uvXTnincfhw/NR3e3HN/J1wHWkN7ri3NfEh9o/dYzrps1WR0Pqiays1PiuRskcRo2Z7/vpndM2Hjlfvj5iIdK3R/9NIhaZq+aCyJxplA91xEVtGygo7Z87/QnEvRmE0Dp9bPwCx5XnyIFg2LdaC9B2ixivcHAYvIaA==
+   eJztlksOwyAMRH3iptu2u7YHr7KohCIM9hiDQTwJJUoMnuFPRHQkJQqIliN51sq1Xos+4PKU2s3l5eJLcbl3S9F4rOmQUMstaUfjQ0vPteG1HqOtcYQVPGw2m80KtLhreBaLjyhYfEQC8eENMpe0PnqQ03tjviPaevrQxrX0MWLvkWpDYs+4D83vYwTRfXidg9acXkQYjxYerT64vu597rfwkfvHffdipvEotTVifZTuFqj/Uh9LYqPAaZP4GLXH5ij5qN0pc9ofl3rWM0VaT9JOyYc3V+1Pwn2ge2jPuWUZD23b6D1WMi9rezI6HtyeKtWnRXO2aHLUYs9/7yTuTlh/pe1JtWj7Cl0fvXxoiqUumkvjcSbQNReRVbys4GN2/X8s51I0ZvMg2etnINX5HaZCzospKRF8tJgH1nuAlVb5fgVJyXA=
   </data>
  </layer>
+ <objectgroup name="Objects" width="50" height="50">
+  <object name="SpawnPoint2" x="80" y="1520">
+   <properties>
+    <property name="playerSpawn2" value=""/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>
