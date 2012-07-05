@@ -37,6 +37,11 @@
     <property name="Job" value="True"/>
    </properties>
   </tile>
+  <tile id="13">
+   <properties>
+    <property name="jump" value="True"/>
+   </properties>
+  </tile>
   <tile id="20">
    <properties>
     <property name="Collidable" value="True"/>
@@ -60,9 +65,9 @@
    eJztzqERADAIADGWhev+E9QzAAgS9+4jAAAAgCuq9Vu5AABgWm4PAAAADPnLWQE0
   </data>
  </layer>
- <layer name="Meta" width="50" height="50" opacity="0.66">
+ <layer name="Meta" width="50" height="50" opacity="0.63">
   <data encoding="base64" compression="zlib">
-   eJztlssOAyEIRf3iTrftsv3xZhZNzEQELuKA8SSmzYjA9YGWUspRtSgguRzVL9eu40bMARWn57cVl7Lv2bX+W5pGI5eHBC62xI9Gh5aZZ8PrPEY74wgraNhsNpsVGPHW8GwWHVGw6IgEosMbZC9pdcygle+D+I7kNlOH1m6kjjtqjzQ3xPa0+5b8Ou4gug6ve9Aa04sI6zFCo1UHNdeaNYiio9VHffciwnpY4kv6LLacH+ptgervzbHENgpUbhIdd9XYFj0d3JuylfvrMs56p0jHSfz0dHhzzf1dcB1oDZ25tyzrofWNvmMl+5Kryeh6UDVVmp8Wzd2iicHZnn2fyu5ZsPmq/Ulz0c4Vej5m6dA0y1g0lkZjJtAzF5FVtKygI3v+fyz3UjSyaZDU+gxkyTMbI/aB9R1gZVS8H8MwxmQ=
+   eJztlt0OwyAIhX3idbfb7rYXX3rRxDSicABF45eYNi0Cxx80pZSOrEUByeXInq1272cxBlScmt9SXMq+Zld61zSJxlYeHFqxOX4kOqT03Bte+zHaHkdYQcNms9msgMVdw7NpdERBoyMSiA5vkLUk1dGDUr4P4juSW08dUjtLHSNqDzc3xPa0+6X5dYwgug6vc1Ab04sI82GhUauDGuve576FjtI/6rsXM81HzdeI/VG7W6D6a2PMsY0ClRtHx6gaW6Kmo3WnLOX+uvXTnincfhw/NR3e3HN/J1wHWkN7ri3NfEh9o/dYzrps1WR0Pqiays1PiuRskcRo2Z7/vpndM2Hjlfvj5iIdK3R/9NIhaZq+aCyJxplA91xEVtGygo7Z87/QnEvRmE0Dp9bPwCx5XnyIFg2LdaC9B2ixivcHAYvIaA==
   </data>
  </layer>
 </map>
