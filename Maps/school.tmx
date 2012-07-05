@@ -21,6 +21,11 @@
     <property name="strength" value="True"/>
    </properties>
   </tile>
+  <tile id="20">
+   <properties>
+    <property name="OutSchool" value="True"/>
+   </properties>
+  </tile>
  </tileset>
  <layer name="background" width="50" height="50">
   <data encoding="base64" compression="zlib">
@@ -29,7 +34,14 @@
  </layer>
  <layer name="Meta" width="50" height="50" opacity="0.5">
   <data encoding="base64" compression="zlib">
-   eJzt1DEKwCAMAEA/q3P/P7l2qCWWVkO5A4mgxAQhpQAAAAAAAAAA5NReXDvd1VUHMWsfx2n/pJ4sfWTK88X7dRBn86zwp/+4qqEF7kTPV4jMn8xztwPUPR6z
+   eJzt1MEKgCAMAFB/Vs9d+/suHTqoWJSOeA/GBEU3hKUEAAAAAAAAABBTeTFW6tWVGzlqH9tl/aSeKH1EuueL93Mj371nhj/9R62GMnBmdH+G3vzZz4g8dw9tcB+l
   </data>
  </layer>
+ <objectgroup name="Objects" width="50" height="50">
+  <object name="SpawnPoint" x="303" y="1552">
+   <properties>
+    <property name="playerSpawn" value=""/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>

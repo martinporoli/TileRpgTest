@@ -10,6 +10,11 @@
     <property name="Collidable" value="True"/>
    </properties>
   </tile>
+  <tile id="11">
+   <properties>
+    <property name="OutGirlHome" value="True"/>
+   </properties>
+  </tile>
  </tileset>
  <layer name="background" width="50" height="50">
   <data encoding="base64" compression="zlib">
@@ -18,7 +23,15 @@
  </layer>
  <layer name="Meta" width="50" height="50" opacity="0.49">
   <data encoding="base64" compression="zlib">
-   eJzt07sNACAIBUCndf8R7I2/WAG5S2ik4UloDQAAAAAAAAAgtn6pLCrlWL1VyPHSi+b079ly/PSi2e0j433MM2e48wFTkA6/
+   eJzt0zEOgDAMA8C8lpn/Tyx0o4A6xdWd5KWZnCpVAAAAAAAAAAC9HR9JsVOPp7cdevyZdfO297QeK7NuZv+ReB8j552EO78A6FAPnw==
   </data>
  </layer>
+ <objectgroup name="Objects" width="50" height="50">
+  <object name="SpawnPoint" x="240" y="1552">
+   <properties>
+    <property name="playerSpawn" value=""/>
+   </properties>
+  </object>
+  <object x="257" y="1544" width="8" height="9"/>
+ </objectgroup>
 </map>
