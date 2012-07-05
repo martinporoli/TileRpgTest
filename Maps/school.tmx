@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="school" tilewidth="32" tileheight="32">
+  <image source="../../school.png" width="320" height="320"/>
+ </tileset>
+ <tileset firstgid="101" name="meta-tiles" tilewidth="32" tileheight="32">
+  <image source="meta-tiles.png" width="320" height="320"/>
+  <tile id="0">
+   <properties>
+    <property name="Collidable" value="True"/>
+    <property name="study" value="True"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="Collidable" value=""/>
+   </properties>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="strength" value="True"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="background" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt0c0KwjAQReFaqFtd2bqqP+//jkZIYBgaOjBeoXA+OFSrkqsOAwAAAAAAAAAAAIA9jz+llt0XTS27L5padl80tey+aGrZfdHUsvuiqWX3RVOzZ42lZ72O5vm59HLX7/27aan3/P6Wmj3rUlpLt9pau3aub1P7nN/fUrNnnX6Q399Ss2f1tk2d69G+x9H+j3lj1+web73Hvu73t9R659r2futIah+lxCeJ
+  </data>
+ </layer>
+ <layer name="Meta" width="50" height="50" opacity="0.5">
+  <data encoding="base64" compression="zlib">
+   eJzt1DEKwCAMAEA/q3P/P7l2qCWWVkO5A4mgxAQhpQAAAAAAAAAA5NReXDvd1VUHMWsfx2n/pJ4sfWTK88X7dRBn86zwp/+4qqEF7kTPV4jMn8xztwPUPR6z
+  </data>
+ </layer>
+</map>
