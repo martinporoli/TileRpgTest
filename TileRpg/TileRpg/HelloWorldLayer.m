@@ -95,13 +95,13 @@
         
         stats = [StatLayer node];
         [self addChild:stats];
-        
         tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"World1.tmx"];
         background = [tileMap layerNamed:@"background"];
         foreground = [tileMap layerNamed:@"foreground"];
         meta = [tileMap layerNamed:@"Meta"];
-        player = [CCSprite spriteWithFile:@"gubbe.png"];
         meta.visible=NO;
+        [self addChild:tileMap z:-1];
+        player = [CCSprite spriteWithFile:@"gubbe.png"];
         
         CCTMXObjectGroup *objects = [tileMap objectGroupNamed:@"Objects"];
         NSAssert(objects != nil, @"'Objects' object group not found");
@@ -114,10 +114,34 @@
         [self addChild:player]; 
         
         [self setViewpointCenter:player.position];
-        [self addChild:tileMap z:-1];
         self.isTouchEnabled = YES;
     }
 	return self;
+}
+
+
+-(void)loadWorld:(NSString*)world
+{
+    tileMap = [CCTMXTiledMap tiledMapWithTMXFile:world];
+    background = [tileMap layerNamed:@"background"];
+    foreground = [tileMap layerNamed:@"foreground"];
+    meta = [tileMap layerNamed:@"Meta"];
+    meta.visible=NO;
+    [self addChild:tileMap z:-1];
+    
+    CCTMXObjectGroup *objects = [tileMap objectGroupNamed:@"Objects"];
+    NSAssert(objects != nil, @"'Objects' object group not found");
+    NSMutableDictionary *spawnPoint = [objects objectNamed:@"SpawnPoint2"];        
+    NSAssert(spawnPoint != nil, @"SpawnPoint object not found");
+    int x = [[spawnPoint valueForKey:@"x"] intValue];
+    int y = [[spawnPoint valueForKey:@"y"] intValue];
+    
+    player.position = ccp(x, y);
+}
+
+-(void)unloadWorld
+{
+    [self removeChild:tileMap cleanup:YES];
 }
 
 // on "dealloc" you need to release all your retained objects
@@ -198,9 +222,17 @@
                 }
             }
             
-            NSString *newW = [properties valueForKey:@"NewWorld"];
-            if (newW && [newW compare:@"True"] == NSOrderedSame) {
-                
+            NSString *world2 = [properties valueForKey:@"NewWorld"];
+            if (world2 && [world2 compare:@"True"] == NSOrderedSame) {
+                [self unloadWorld];
+                [self loadWorld:@"World2.tmx"];
+                return;
+            }
+            NSString *world1 = [properties valueForKey:@"World1"];
+            if (world1 && [world1 compare:@"True"] == NSOrderedSame) {
+                [self unloadWorld];
+                [self loadWorld:@"World1.tmx"];
+                return;
             }
         }
     }
