@@ -46,7 +46,7 @@
 }
 -(void)showRuta:(CGPoint)point:(int)newMoney:(int)newInt:(int)newStr:(int)newCha
 {
-    NSString * statString = [NSString stringWithFormat:@"Money: %i\nInt: %i\nStr: %i\nCha: %i",newMoney,newInt,newStr,newCha];
+    NSString * statString = [NSString stringWithFormat:@"Money:\t%i\nIntelligence:\t%i\nStrength:\t%i\nCharm:\t%i",newMoney,newInt,newStr,newCha];
     [statLabel setString:statString];
     ruta.position=point;
     statLabel.position=point;
