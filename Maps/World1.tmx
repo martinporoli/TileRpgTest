@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="32" tileheight="32">
  <tileset firstgid="1" name="landskapem" tilewidth="32" tileheight="32">
-  <image source="../../landskapem.png" width="320" height="320"/>
+  <image source="landskapem.png" width="320" height="320"/>
  </tileset>
  <tileset firstgid="101" name="meta-tiles" tilewidth="32" tileheight="32">
-  <image source="../../meta-tiles.png" width="320" height="320"/>
+  <image source="meta-tiles.png" width="320" height="320"/>
   <tile id="1">
    <properties>
     <property name="Collidable" value="True"/>
@@ -28,7 +28,7 @@
   </tile>
  </tileset>
  <tileset firstgid="201" name="foregroundW1" tilewidth="32" tileheight="32">
-  <image source="../../foregroundW1.png" width="62" height="64"/>
+  <image source="foregroundW1.png" width="62" height="64"/>
  </tileset>
  <layer name="background" width="50" height="50">
   <data encoding="base64" compression="zlib">
@@ -51,7 +51,7 @@
     <property name="playerSpawn" value=""/>
    </properties>
   </object>
-  <object name="SpawnPoint2" x="1381" y="1255" width="21" height="20">
+  <object name="SpawnPoint2" x="1392" y="1264">
    <properties>
     <property name="playerSpawn2" value=""/>
    </properties>

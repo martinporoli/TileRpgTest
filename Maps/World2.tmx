@@ -81,7 +81,7 @@
     <property name="playerSpawn2" value=""/>
    </properties>
   </object>
-  <object name="SpawnPointHome" x="837" y="1190" width="22" height="21">
+  <object name="SpawnPointHome" x="847" y="1200">
    <properties>
     <property name="playerSpawnHome" value=""/>
    </properties>
