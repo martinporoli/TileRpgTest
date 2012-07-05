@@ -13,7 +13,7 @@
   </tile>
   <tile id="1">
    <properties>
-    <property name="Collidable" value="True"/>
+    <property name="Collidable" value=""/>
    </properties>
   </tile>
   <tile id="11">

@@ -200,6 +200,18 @@
                 [self loadWorld:@"home.tmx":@"SpawnPoint"];
                 return;
             }
+            NSString *ghome = [properties valueForKey:@"GirlsHome"];
+            if (ghome && [ghome compare:@"True"] == NSOrderedSame) {
+                [self unloadWorld];
+                [self loadWorld:@"GirlsHome.tmx":@"SpawnPoint"];
+                return;
+            }
+            NSString *school = [properties valueForKey:@"School"];
+            if (school && [school compare:@"True"] == NSOrderedSame) {
+                [self unloadWorld];
+                [self loadWorld:@"school.tmx":@"SpawnPoint"];
+                return;
+            }
             NSString *coin = [properties valueForKey:@"Coin"];
             if (coin && [coin compare:@"True"] == NSOrderedSame) {
                 if(chestMoney<5)
@@ -210,6 +222,18 @@
                 else {
                     return;
                 }
+            }
+            NSString *outgHome= [properties valueForKey:@"OutGirlHome"];
+            if (outgHome && [outgHome compare:@"True"] == NSOrderedSame) {
+                [self unloadWorld];
+                [self loadWorld:@"World2.tmx":@"SpawnPointGirlHome"];
+                return;
+            }
+            NSString *outSchool= [properties valueForKey:@"OutSchool"];
+            if (outSchool && [outSchool compare:@"True"] == NSOrderedSame) {
+                [self unloadWorld];
+                [self loadWorld:@"World2.tmx":@"SpawnPointSchool"];
+                return;
             }
             NSString *collision = [properties valueForKey:@"Collidable"];
             if (collision && [collision compare:@"True"] == NSOrderedSame) {
