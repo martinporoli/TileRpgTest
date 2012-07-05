@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="Job" tilewidth="32" tileheight="32">
+  <image source="../../Job.png" width="320" height="320"/>
+ </tileset>
+ <tileset firstgid="101" name="meta-tiles" tilewidth="32" tileheight="32">
+  <image source="meta-tiles.png" width="320" height="320"/>
+  <tile id="0">
+   <properties>
+    <property name="Collidable" value="True"/>
+    <property name="Work" value="True"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="Collidable" value="True"/>
+   </properties>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="OutJob" value="True"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="background" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt0kEKgCAQRuEp6Apqq6a6/x1zYSBiJCGMwfvggS5c/JQIAAAAAAAAAAAAAADfaaesaaesaaesaaesadEcC7E9dmTnNTWne5Cxd7jYVulM3XcnY++YUkvDOX9nTaW+o6X8nTUt8tL2Pbz8Y8dbo+/Iq/0/T1m7AIOTEy0=
+  </data>
+ </layer>
+ <layer name="Meta" width="50" height="50" opacity="0.5">
+  <data encoding="base64" compression="zlib">
+   eJzt1DEOgCAMBVAuK7P3n1gcumkEsZD3kp8wdGhDoRQAAAAAAAAAoEf9u4FBss5RXySj3eYYXTtb7Ot4cF5hji/qZ4m7cncf2fdql/cRc15Z4b9q+0sZKQ==
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="50" height="50">
+  <object name="SpawnPoint" x="239" y="1552">
+   <properties>
+    <property name="playerSpawn" value=""/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
