@@ -31,4 +31,11 @@
    eJzt0zEKwCAQRUEva2rvX4VAbGSJVSA/zMAWYvMWtDUAAAAAAAAAAN50bCbFn/aozr24+7Kn1rQ9qt7Ed7U2J/6P6Woe9yT1n8GoDmw=
   </data>
  </layer>
+ <objectgroup name="Objects" width="50" height="50">
+  <object name="SpawnPoint" x="166" y="1541" width="20" height="19">
+   <properties>
+    <property name="playerSpawn" value=""/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>
