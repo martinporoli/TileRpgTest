@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="Home" tilewidth="32" tileheight="32">
+  <image source="../../Home.png" width="320" height="320"/>
+ </tileset>
+ <tileset firstgid="101" name="meta-tiles" tilewidth="32" tileheight="32">
+  <image source="meta-tiles.png" width="320" height="320"/>
+  <tile id="0">
+   <properties>
+    <property name="sleep" value="True"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="Collidable" value="True"/>
+   </properties>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="OutHome" value="True"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="background" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt0bEKgDAMRdHo6m7dfPr/H6lDC4VWh0wJ3AOXzI+YAQAAAAAAAAAAAADgJ2fRyFk0chaNnEUjZ9Goa3276r3rPSzfjrNrr3ezfDuWjzQpGnUVGzcUy7ej9feHVjSalHHHAzxyEPs=
+  </data>
+ </layer>
+ <layer name="Meta" width="50" height="50" opacity="0.46">
+  <data encoding="base64" compression="zlib">
+   eJzt0zEKwCAQRUEva2rvX4VAbGSJVSA/zMAWYvMWtDUAAAAAAAAAAN50bCbFn/aozr24+7Kn1rQ9qt7Ed7U2J/6P6Woe9yT1n8GoDmw=
+  </data>
+ </layer>
+</map>
