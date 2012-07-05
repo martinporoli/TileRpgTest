@@ -28,11 +28,11 @@
  </layer>
  <layer name="Meta" width="50" height="50" opacity="0.46">
   <data encoding="base64" compression="zlib">
-   eJzt0zEKwCAQRUEvG2vvX0nANEFMFfDLDGxl8xbWUgAAAAAAAAAA+FP9mBQn7TFzLd52tGpN22PWm3hX7+bE//G4m9uYpP4OPLkOBg==
+   eJzt0zEKwCAQRUEva2rvX4VAbGSJVSA/zMAWYvMWtDUAAAAAAAAAAN50bCbFn/aozr24+7Kn1rQ9qt7Ed7U2J/6P6Woe9yT1n8GoDmw=
   </data>
  </layer>
  <objectgroup name="Objects" width="50" height="50">
-  <object name="SpawnPoint" x="176" y="1551">
+  <object name="SpawnPoint" x="166" y="1541" width="20" height="19">
    <properties>
     <property name="playerSpawn" value=""/>
    </properties>

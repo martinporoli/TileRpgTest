@@ -145,9 +145,11 @@
 		90D8C2A415A43ADB00BB5914 /* gubbeBak2.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2A015A43AD900BB5914 /* gubbeBak2.png */; };
 		90D8C2A815A4537300BB5914 /* statRuta.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2A715A4537300BB5914 /* statRuta.png */; };
 		90D8C2AC15A587E600BB5914 /* foregroundtilesW2.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2A915A587E600BB5914 /* foregroundtilesW2.png */; };
-		90D8C2AD15A587E600BB5914 /* landskap2.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2AA15A587E600BB5914 /* landskap2.png */; };
 		90D8C2B315A58BD400BB5914 /* World1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2B115A58BD400BB5914 /* World1.tmx */; };
-		90D8C2B415A58BD400BB5914 /* World2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2B215A58BD400BB5914 /* World2.tmx */; };
+		90D8C2B715A5B55500BB5914 /* Home.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2B515A5B55500BB5914 /* Home.png */; };
+		90D8C2BA15A5B72C00BB5914 /* home.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2B915A5B72C00BB5914 /* home.tmx */; };
+		90D8C2BD15A5BB0A00BB5914 /* landskap2.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2BB15A5BB0900BB5914 /* landskap2.png */; };
+		90D8C2BE15A5BB0A00BB5914 /* World2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2BC15A5BB0900BB5914 /* World2.tmx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -424,9 +426,11 @@
 		90D8C2A015A43AD900BB5914 /* gubbeBak2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gubbeBak2.png; sourceTree = "<group>"; };
 		90D8C2A715A4537300BB5914 /* statRuta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statRuta.png; sourceTree = "<group>"; };
 		90D8C2A915A587E600BB5914 /* foregroundtilesW2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foregroundtilesW2.png; sourceTree = "<group>"; };
-		90D8C2AA15A587E600BB5914 /* landskap2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landskap2.png; sourceTree = "<group>"; };
 		90D8C2B115A58BD400BB5914 /* World1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = World1.tmx; sourceTree = "<group>"; };
-		90D8C2B215A58BD400BB5914 /* World2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = World2.tmx; sourceTree = "<group>"; };
+		90D8C2B515A5B55500BB5914 /* Home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Home.png; sourceTree = "<group>"; };
+		90D8C2B915A5B72C00BB5914 /* home.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = home.tmx; sourceTree = "<group>"; };
+		90D8C2BB15A5BB0900BB5914 /* landskap2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landskap2.png; sourceTree = "<group>"; };
+		90D8C2BC15A5BB0900BB5914 /* World2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = World2.tmx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -867,9 +871,11 @@
 				90D8C28115A4282D00BB5914 /* foregroundW1.png */,
 				90D8C28215A4282D00BB5914 /* landskapem.png */,
 				90D8C2A915A587E600BB5914 /* foregroundtilesW2.png */,
-				90D8C2AA15A587E600BB5914 /* landskap2.png */,
+				90D8C2B515A5B55500BB5914 /* Home.png */,
+				90D8C2BB15A5BB0900BB5914 /* landskap2.png */,
+				90D8C2BC15A5BB0900BB5914 /* World2.tmx */,
+				90D8C2B915A5B72C00BB5914 /* home.tmx */,
 				90D8C2B115A58BD400BB5914 /* World1.tmx */,
-				90D8C2B215A58BD400BB5914 /* World2.tmx */,
 			);
 			name = Maps;
 			sourceTree = "<group>";
@@ -968,9 +974,11 @@
 				90D8C2A415A43ADB00BB5914 /* gubbeBak2.png in Resources */,
 				90D8C2A815A4537300BB5914 /* statRuta.png in Resources */,
 				90D8C2AC15A587E600BB5914 /* foregroundtilesW2.png in Resources */,
-				90D8C2AD15A587E600BB5914 /* landskap2.png in Resources */,
 				90D8C2B315A58BD400BB5914 /* World1.tmx in Resources */,
-				90D8C2B415A58BD400BB5914 /* World2.tmx in Resources */,
+				90D8C2B715A5B55500BB5914 /* Home.png in Resources */,
+				90D8C2BA15A5B72C00BB5914 /* home.tmx in Resources */,
+				90D8C2BD15A5BB0A00BB5914 /* landskap2.png in Resources */,
+				90D8C2BE15A5BB0A00BB5914 /* World2.tmx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

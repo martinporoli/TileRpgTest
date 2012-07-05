@@ -120,7 +120,7 @@
 }
 
 
--(void)loadWorld:(NSString*)world
+-(void)loadWorld:(NSString*)world:spawn
 {
     tileMap = [CCTMXTiledMap tiledMapWithTMXFile:world];
     background = [tileMap layerNamed:@"background"];
@@ -128,10 +128,10 @@
     meta = [tileMap layerNamed:@"Meta"];
     meta.visible=NO;
     [self addChild:tileMap z:-1];
-    
+
     CCTMXObjectGroup *objects = [tileMap objectGroupNamed:@"Objects"];
     NSAssert(objects != nil, @"'Objects' object group not found");
-    NSMutableDictionary *spawnPoint = [objects objectNamed:@"SpawnPoint2"];        
+    NSMutableDictionary *spawnPoint = [objects objectNamed:spawn];        
     NSAssert(spawnPoint != nil, @"SpawnPoint object not found");
     int x = [[spawnPoint valueForKey:@"x"] intValue];
     int y = [[spawnPoint valueForKey:@"y"] intValue];
@@ -196,6 +196,12 @@
     if (tileGid) {
         NSDictionary *properties = [tileMap propertiesForGID:tileGid];
         if (properties) {
+            NSString *home = [properties valueForKey:@"Home"];
+            if (home && [home compare:@"True"] == NSOrderedSame) {
+                [self unloadWorld];
+                [self loadWorld:@"home.tmx":@"SpawnPoint"];
+                return;
+            }
             NSString *coin = [properties valueForKey:@"Coin"];
             if (coin && [coin compare:@"True"] == NSOrderedSame) {
                 if(chestMoney<5)
@@ -222,16 +228,23 @@
                 }
             }
             
+            
             NSString *world2 = [properties valueForKey:@"NewWorld"];
             if (world2 && [world2 compare:@"True"] == NSOrderedSame) {
                 [self unloadWorld];
-                [self loadWorld:@"World2.tmx"];
+                [self loadWorld:@"World2.tmx":@"SpawnPoint2"];
                 return;
             }
             NSString *world1 = [properties valueForKey:@"World1"];
             if (world1 && [world1 compare:@"True"] == NSOrderedSame) {
                 [self unloadWorld];
-                [self loadWorld:@"World1.tmx"];
+                [self loadWorld:@"World1.tmx":@"SpawnPoint2"];
+                return;
+            }
+            NSString *outhome = [properties valueForKey:@"OutHome"];
+            if (outhome && [outhome compare:@"True"] == NSOrderedSame) {
+                [self unloadWorld];
+                [self loadWorld:@"World2.tmx":@"SpawnPointHome"];
                 return;
             }
         }

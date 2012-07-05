@@ -86,5 +86,25 @@
     <property name="playerSpawnHome" value=""/>
    </properties>
   </object>
+  <object name="SpawnPointGirlHome" x="944" y="1199">
+   <properties>
+    <property name="playerSpawnGirlHome" value=""/>
+   </properties>
+  </object>
+  <object name="SpawnPointShop" x="496" y="1039">
+   <properties>
+    <property name="playerSpawnShop" value=""/>
+   </properties>
+  </object>
+  <object name="SpawnPointBar" x="560" y="687">
+   <properties>
+    <property name="playerSpawnBar" value=""/>
+   </properties>
+  </object>
+  <object name="SpawnPointSchool" x="1200" y="591">
+   <properties>
+    <property name="playerSpawnSchool" value=""/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
