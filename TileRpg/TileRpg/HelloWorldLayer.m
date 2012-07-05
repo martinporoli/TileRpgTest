@@ -19,10 +19,6 @@
     CCLayer * layer;
     CCSprite * ruta;
     CCLabelTTF * statLabel;
-    CCLabelTTF * Int;
-    CCLabelTTF * Str;
-    CCLabelTTF * Cha;
-    CCLabelTTF * Money;
 }
 -(id) init
 {
@@ -44,9 +40,9 @@
     }
     return self;
 }
--(void)showRuta:(CGPoint)point:(int)newMoney:(int)newInt:(int)newStr:(int)newCha
+-(void)showRuta:(CGPoint)point:(int)newEnergy:(int)newMoney:(int)newInt:(int)newStr:(int)newCha:(int)newDay
 {
-    NSString * statString = [NSString stringWithFormat:@"Money:\t%i\nIntelligence:\t%i\nStrength:\t%i\nCharm:\t%i",newMoney,newInt,newStr,newCha];
+    NSString * statString = [NSString stringWithFormat:@"Energy:\t%i\nMoney:\t%i\nIntelligence:\t%i\nStrength:\t%i\nCharm:\t%i\nDay:\t%i",newEnergy,newMoney,newInt,newStr,newCha,newDay];
     [statLabel setString:statString];
     ruta.position=point;
     statLabel.position=point;
@@ -61,7 +57,7 @@
     CCTMXLayer * meta;
     CCSprite *player;
     int playerWalk,jumpAble,chestMoney;
-    int money,Int,Str,Cha;
+    int money,Int,Str,Cha,energy,days;
     StatLayer * stats;
     CGPoint viewPoint;
 }
@@ -92,6 +88,8 @@
         Int=0;
         Str=0;
         Cha=0;
+        energy=100;
+        days=1;
         
         stats = [StatLayer node];
         [self addChild:stats];
@@ -176,7 +174,7 @@
     CGPoint centerOfView = ccp(winSize.width/2, winSize.height/2);
     viewPoint = ccpSub(centerOfView, actualPosition);
     self.position = viewPoint;
-    [stats showRuta:ccp(x+winSize.width/3,y+winSize.height/3):money:Int:Str:Cha];
+    [stats showRuta:ccp(x+winSize.width/3,y+winSize.height/3):energy:money:Int:Str:Cha:days];
 }
 
 -(void) registerWithTouchDispatcher
@@ -221,14 +219,33 @@
             if (jump && [jump compare:@"True"] == NSOrderedSame) {
                 if(jumpAble==0)
                 {
-                    return;
+                    if(energy>=5)
+                    {
+                        energy-=5;
+                    }
+                    else {
+                        return;
+                    }
                 }
                 else{
                     
                 }
             }
-            
-            
+            NSString *sleep = [properties valueForKey:@"sleep"];
+            if (sleep && [sleep compare:@"True"] == NSOrderedSame) {
+                if(energy>50)
+                {
+                    Int-=5;
+                }
+                [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbeSleeping.png"]];
+                energy=100;
+                days++;
+                
+            }
+            NSString *notsleep = [properties valueForKey:@"notSleep"];
+            if (notsleep && [notsleep compare:@"True"] == NSOrderedSame) {
+                [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"gubbe.png"]];
+            }
             NSString *world2 = [properties valueForKey:@"NewWorld"];
             if (world2 && [world2 compare:@"True"] == NSOrderedSame) {
                 [self unloadWorld];

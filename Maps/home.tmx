@@ -15,6 +15,11 @@
     <property name="Collidable" value="True"/>
    </properties>
   </tile>
+  <tile id="2">
+   <properties>
+    <property name="notSleep" value=""/>
+   </properties>
+  </tile>
   <tile id="11">
    <properties>
     <property name="OutHome" value="True"/>
@@ -28,7 +33,7 @@
  </layer>
  <layer name="Meta" width="50" height="50" opacity="0.46">
   <data encoding="base64" compression="zlib">
-   eJzt0zEKwCAQRUEvG2vvX0nANEFMFfDLDGxl8xbWUgAAAAAAAAAA+FP9mBQn7TFzLd52tGpN22PWm3hX7+bE//G4m9uYpP4OPLkOBg==
+   eJzt0zEKgDAMBdBetnbt/ScV2qUQnYRG3oM/ZfmBpBQAAAAAAAAAAL50vCSLP+2xaldqMNtV1LU9zHYU3U/Gu1o7Z/yP6e7cRzL1PwH46w7U
   </data>
  </layer>
  <objectgroup name="Objects" width="50" height="50">

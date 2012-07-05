@@ -51,7 +51,7 @@
     <property name="playerSpawn" value=""/>
    </properties>
   </object>
-  <object name="SpawnPoint2" x="1381" y="1255" width="21" height="20">
+  <object name="SpawnPoint2" x="1392" y="1264">
    <properties>
     <property name="playerSpawn2" value=""/>
    </properties>
