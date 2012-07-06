@@ -24,9 +24,8 @@
 {
     if (self = [super init])
     {
-        
         ruta=[CCSprite spriteWithFile:@"statRuta.png"];
-        statLabel=[CCLabelTTF labelWithString:@"" dimensions:CGSizeMake(300, 300) hAlignment:CCTextAlignmentLeft lineBreakMode:CCLineBreakModeMiddleTruncation fontName:@"Verdana-Bold" fontSize:25];
+        statLabel=[CCLabelTTF labelWithString:@"" dimensions:CGSizeMake(300, 300) hAlignment:CCTextAlignmentLeft lineBreakMode:CCLineBreakModeMiddleTruncation fontName:@"Helvetica-Bold" fontSize:25];
         statLabel.color=ccc3(0,0,0);
         [self addChild:ruta];
         [self addChild:statLabel];
@@ -60,6 +59,7 @@
     int money,Int,Str,Cha,energy,days;
     StatLayer * stats;
     CGPoint viewPoint;
+    CCMenu *menu;
 }
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
@@ -84,39 +84,55 @@
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if( (self=[super init]) ) {
-        money=0;
-        Int=0;
-        Str=0;
-        Cha=0;
-        energy=100;
-        days=1;
         
-        stats = [StatLayer node];
-        [self addChild:stats];
-        tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"World1.tmx"];
-        background = [tileMap layerNamed:@"background"];
-        foreground = [tileMap layerNamed:@"foreground"];
-        meta = [tileMap layerNamed:@"Meta"];
-        meta.visible=NO;
-        [self addChild:tileMap z:-1];
-        player = [CCSprite spriteWithFile:@"gubbe.png"];
+        CCLabelTTF *newGame = [CCLabelTTF labelWithString:@"New Game" fontName:@"Helvetica-Bold" fontSize:45];
+        CCLabelTTF *loadGame = [CCLabelTTF labelWithString:@"Load Game" fontName:@"Helvetica-Bold" fontSize:45];
+        CCMenuItemLabel *item1 = [CCMenuItemLabel itemWithLabel:newGame target:self selector:@selector(startGame:)];
+        CCMenuItemLabel *item2 = [CCMenuItemLabel itemWithLabel:loadGame target:self selector:@selector(loadGame:)];
+        menu = [CCMenu menuWithItems:item1, item2, nil];
+        [menu alignItemsVertically];
+        [self addChild:menu];
         
-        CCTMXObjectGroup *objects = [tileMap objectGroupNamed:@"Objects"];
-        NSAssert(objects != nil, @"'Objects' object group not found");
-        NSMutableDictionary *spawnPoint = [objects objectNamed:@"SpawnPoint"];        
-        NSAssert(spawnPoint != nil, @"SpawnPoint object not found");
-        int x = [[spawnPoint valueForKey:@"x"] intValue];
-        int y = [[spawnPoint valueForKey:@"y"] intValue];
         
-        player.position = ccp(x, y);
-        [self addChild:player]; 
-        
-        [self setViewpointCenter:player.position];
-        self.isTouchEnabled = YES;
     }
 	return self;
 }
 
+-(void)startGame:(id)sender{
+    money=0;
+    Int=0;
+    Str=0;
+    Cha=0;
+    energy=100;
+    days=1;
+    
+    stats = [StatLayer node];
+    [self addChild:stats];
+    tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"World1.tmx"];
+    background = [tileMap layerNamed:@"background"];
+    foreground = [tileMap layerNamed:@"foreground"];
+    meta = [tileMap layerNamed:@"Meta"];
+    meta.visible=NO;
+    [self addChild:tileMap z:-1];
+    player = [CCSprite spriteWithFile:@"gubbe.png"];
+    
+    CCTMXObjectGroup *objects = [tileMap objectGroupNamed:@"Objects"];
+    NSAssert(objects != nil, @"'Objects' object group not found");
+    NSMutableDictionary *spawnPoint = [objects objectNamed:@"SpawnPoint"];        
+    NSAssert(spawnPoint != nil, @"SpawnPoint object not found");
+    int x = [[spawnPoint valueForKey:@"x"] intValue];
+    int y = [[spawnPoint valueForKey:@"y"] intValue];
+    
+    player.position = ccp(x, y);
+    [self addChild:player]; 
+    
+    [self setViewpointCenter:player.position];
+    self.isTouchEnabled = YES;
+    [self removeChild:menu cleanup:YES];
+}
+-(void)loadGame:(id)sender{
+    //code goes here
+}
 
 -(void)loadWorld:(NSString*)world:spawn
 {
@@ -223,6 +239,19 @@
                     return;
                 }
             }
+            NSString *bar= [properties valueForKey:@"Bar"];
+            if (bar && [bar compare:@"True"] == NSOrderedSame) {
+                [self unloadWorld];
+                [self loadWorld:@"BarMap.tmx":@"SpawnPoint"];
+                return;
+            }
+            NSString *Outbar= [properties valueForKey:@"outBar"];
+            if (Outbar && [Outbar compare:@"True"] == NSOrderedSame) {
+                [self unloadWorld];
+                [self loadWorld:@"World2.tmx":@"SpawnPointBar"];
+                return;
+            }
+            
             NSString *outgHome= [properties valueForKey:@"OutGirlHome"];
             if (outgHome && [outgHome compare:@"True"] == NSOrderedSame) {
                 [self unloadWorld];
@@ -235,10 +264,19 @@
                 [self loadWorld:@"World2.tmx":@"SpawnPointSchool"];
                 return;
             }
-            NSString *collision = [properties valueForKey:@"Collidable"];
-            if (collision && [collision compare:@"True"] == NSOrderedSame) {
+            NSString *job= [properties valueForKey:@"Job"];
+            if (job && [job compare:@"True"] == NSOrderedSame) {
+                [self unloadWorld];
+                [self loadWorld:@"Job.tmx":@"SpawnPoint"];
                 return;
             }
+            NSString *Outjob= [properties valueForKey:@"OutJob"];
+            if (Outjob && [Outjob compare:@"True"] == NSOrderedSame) {
+                [self unloadWorld];
+                [self loadWorld:@"World2.tmx":@"SpawnPointJob"];
+                return;
+            }
+            
             NSString *jump = [properties valueForKey:@"jump"];
             if (jump && [jump compare:@"True"] == NSOrderedSame) {
                 if(jumpAble==0)
@@ -253,6 +291,64 @@
                 }
                 else{
                     
+                }
+            }
+            NSString *drink = [properties valueForKey:@"Drinking"];
+            if (drink && [drink compare:@"True"] == NSOrderedSame) {
+                if(energy>19)
+                {
+                    energy-=20;
+                    Cha+=5;
+                }
+            }
+            NSString *work = [properties valueForKey:@"Work"];
+            if (work && [work compare:@"True"] == NSOrderedSame) {
+                if(energy>19)
+                {
+                    energy-=20;
+                    money+=(Int/2)+20;
+                }
+            }
+            NSString *work2 = [properties valueForKey:@"WorkTalk"];
+            if (work2 && [work2 compare:@"True"] == NSOrderedSame) {
+                if(energy>19)
+                {
+                    energy-=20;
+                    money+=(Str/4)+40;
+                }
+            }
+            NSString *study = [properties valueForKey:@"study"];
+            if (study && [study compare:@"True"] == NSOrderedSame) {
+                if(energy>19)
+                {
+                    energy-=20;
+                    Int+=5;
+                }
+            }
+            NSString *schoolTalk = [properties valueForKey:@"SchoolTalk"];
+            if (schoolTalk && [schoolTalk compare:@"True"] == NSOrderedSame) {
+                if(energy>=20&&money>=20)
+                {
+                    energy-=20;
+                    Int+=10;
+                    money-=20;
+                }
+            }
+            NSString *barTalk = [properties valueForKey:@"BarTalk"];
+            if (barTalk && [barTalk compare:@"True"] == NSOrderedSame) {
+                if(energy>=30&&money>=30)
+                {
+                    energy-=30;
+                    Cha+=15;
+                    money-=30;
+                }
+            }
+            NSString *workOut = [properties valueForKey:@"strength"];
+            if (workOut && [workOut compare:@"True"] == NSOrderedSame) {
+                if(energy>19)
+                {
+                    energy-=20;
+                    Str+=5;
                 }
             }
             NSString *sleep = [properties valueForKey:@"sleep"];
@@ -286,6 +382,10 @@
             if (outhome && [outhome compare:@"True"] == NSOrderedSame) {
                 [self unloadWorld];
                 [self loadWorld:@"World2.tmx":@"SpawnPointHome"];
+                return;
+            }
+            NSString *collision = [properties valueForKey:@"Collidable"];
+            if (collision && [collision compare:@"True"] == NSOrderedSame) {
                 return;
             }
         }

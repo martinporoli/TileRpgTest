@@ -106,5 +106,10 @@
     <property name="playerSpawnSchool" value=""/>
    </properties>
   </object>
+  <object name="SpawnPointJob" x="1263" y="1072">
+   <properties>
+    <property name="playerSpawnJob" value=""/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

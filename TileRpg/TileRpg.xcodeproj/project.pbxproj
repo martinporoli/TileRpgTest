@@ -148,15 +148,18 @@
 		90D8C2B715A5B55500BB5914 /* Home.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2B515A5B55500BB5914 /* Home.png */; };
 		90D8C2BD15A5BB0A00BB5914 /* landskap2.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2BB15A5BB0900BB5914 /* landskap2.png */; };
 		90D8C2C315A5C05400BB5914 /* World1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2C015A5C05400BB5914 /* World1.tmx */; };
-		90D8C2C415A5C05400BB5914 /* World2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2C115A5C05400BB5914 /* World2.tmx */; };
 		90D8C2C615A5C2E000BB5914 /* gubbeSleeping.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2C515A5C2E000BB5914 /* gubbeSleeping.png */; };
-		90D8C2C815A5C41500BB5914 /* home.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2C715A5C41500BB5914 /* home.tmx */; };
 		90D8C2CF15A5D15900BB5914 /* bar-tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2C915A5D15900BB5914 /* bar-tiles.png */; };
 		90D8C2D115A5D15900BB5914 /* GirlHome.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2CB15A5D15900BB5914 /* GirlHome.png */; };
 		90D8C2D315A5D15900BB5914 /* school.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2CD15A5D15900BB5914 /* school.png */; };
-		90D8C2D915A5D22200BB5914 /* GirlsHome.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2D615A5D22100BB5914 /* GirlsHome.tmx */; };
-		90D8C2DC15A5D2A900BB5914 /* BarMap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2DB15A5D2A900BB5914 /* BarMap.tmx */; };
-		90D8C2DE15A5D38700BB5914 /* school.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2DD15A5D38700BB5914 /* school.tmx */; };
+		90D8C2E815A5DABF00BB5914 /* BarMap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2E315A5DAB800BB5914 /* BarMap.tmx */; };
+		90D8C2E915A5DABF00BB5914 /* GirlsHome.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2E415A5DAB900BB5914 /* GirlsHome.tmx */; };
+		90D8C2EA15A5DABF00BB5914 /* home.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2E515A5DABA00BB5914 /* home.tmx */; };
+		90D8C2EB15A5DABF00BB5914 /* Job.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2E615A5DABB00BB5914 /* Job.tmx */; };
+		90D8C2EC15A5DABF00BB5914 /* school.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2E715A5DABD00BB5914 /* school.tmx */; };
+		90D8C2EE15A5DB1B00BB5914 /* character-tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2ED15A5DB1A00BB5914 /* character-tiles.png */; };
+		90D8C2F015A5DC4B00BB5914 /* Job.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2EF15A5DC4B00BB5914 /* Job.png */; };
+		90D8C2F215A6C43500BB5914 /* World2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90D8C2F115A6C43500BB5914 /* World2.tmx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -436,15 +439,18 @@
 		90D8C2B515A5B55500BB5914 /* Home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Home.png; sourceTree = "<group>"; };
 		90D8C2BB15A5BB0900BB5914 /* landskap2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landskap2.png; sourceTree = "<group>"; };
 		90D8C2C015A5C05400BB5914 /* World1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = World1.tmx; sourceTree = "<group>"; };
-		90D8C2C115A5C05400BB5914 /* World2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = World2.tmx; sourceTree = "<group>"; };
 		90D8C2C515A5C2E000BB5914 /* gubbeSleeping.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gubbeSleeping.png; sourceTree = "<group>"; };
-		90D8C2C715A5C41500BB5914 /* home.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = home.tmx; sourceTree = "<group>"; };
 		90D8C2C915A5D15900BB5914 /* bar-tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar-tiles.png"; sourceTree = "<group>"; };
 		90D8C2CB15A5D15900BB5914 /* GirlHome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlHome.png; sourceTree = "<group>"; };
 		90D8C2CD15A5D15900BB5914 /* school.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = school.png; sourceTree = "<group>"; };
-		90D8C2D615A5D22100BB5914 /* GirlsHome.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GirlsHome.tmx; sourceTree = "<group>"; };
-		90D8C2DB15A5D2A900BB5914 /* BarMap.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BarMap.tmx; sourceTree = "<group>"; };
-		90D8C2DD15A5D38700BB5914 /* school.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = school.tmx; sourceTree = "<group>"; };
+		90D8C2E315A5DAB800BB5914 /* BarMap.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BarMap.tmx; sourceTree = "<group>"; };
+		90D8C2E415A5DAB900BB5914 /* GirlsHome.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GirlsHome.tmx; sourceTree = "<group>"; };
+		90D8C2E515A5DABA00BB5914 /* home.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = home.tmx; sourceTree = "<group>"; };
+		90D8C2E615A5DABB00BB5914 /* Job.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Job.tmx; sourceTree = "<group>"; };
+		90D8C2E715A5DABD00BB5914 /* school.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = school.tmx; sourceTree = "<group>"; };
+		90D8C2ED15A5DB1A00BB5914 /* character-tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "character-tiles.png"; sourceTree = "<group>"; };
+		90D8C2EF15A5DC4B00BB5914 /* Job.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Job.png; sourceTree = "<group>"; };
+		90D8C2F115A6C43500BB5914 /* World2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = World2.tmx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -886,16 +892,19 @@
 				90D8C2CB15A5D15900BB5914 /* GirlHome.png */,
 				90D8C2CD15A5D15900BB5914 /* school.png */,
 				90D8C28115A4282D00BB5914 /* foregroundW1.png */,
+				90D8C2ED15A5DB1A00BB5914 /* character-tiles.png */,
+				90D8C2EF15A5DC4B00BB5914 /* Job.png */,
 				90D8C28215A4282D00BB5914 /* landskapem.png */,
 				90D8C2A915A587E600BB5914 /* foregroundtilesW2.png */,
 				90D8C2B515A5B55500BB5914 /* Home.png */,
 				90D8C2BB15A5BB0900BB5914 /* landskap2.png */,
-				90D8C2DB15A5D2A900BB5914 /* BarMap.tmx */,
-				90D8C2DD15A5D38700BB5914 /* school.tmx */,
-				90D8C2D615A5D22100BB5914 /* GirlsHome.tmx */,
-				90D8C2C715A5C41500BB5914 /* home.tmx */,
+				90D8C2E315A5DAB800BB5914 /* BarMap.tmx */,
+				90D8C2E415A5DAB900BB5914 /* GirlsHome.tmx */,
+				90D8C2E515A5DABA00BB5914 /* home.tmx */,
+				90D8C2E615A5DABB00BB5914 /* Job.tmx */,
+				90D8C2E715A5DABD00BB5914 /* school.tmx */,
 				90D8C2C015A5C05400BB5914 /* World1.tmx */,
-				90D8C2C115A5C05400BB5914 /* World2.tmx */,
+				90D8C2F115A6C43500BB5914 /* World2.tmx */,
 			);
 			name = Maps;
 			sourceTree = "<group>";
@@ -998,15 +1007,18 @@
 				90D8C2B715A5B55500BB5914 /* Home.png in Resources */,
 				90D8C2BD15A5BB0A00BB5914 /* landskap2.png in Resources */,
 				90D8C2C315A5C05400BB5914 /* World1.tmx in Resources */,
-				90D8C2C415A5C05400BB5914 /* World2.tmx in Resources */,
 				90D8C2C615A5C2E000BB5914 /* gubbeSleeping.png in Resources */,
-				90D8C2C815A5C41500BB5914 /* home.tmx in Resources */,
 				90D8C2CF15A5D15900BB5914 /* bar-tiles.png in Resources */,
 				90D8C2D115A5D15900BB5914 /* GirlHome.png in Resources */,
 				90D8C2D315A5D15900BB5914 /* school.png in Resources */,
-				90D8C2D915A5D22200BB5914 /* GirlsHome.tmx in Resources */,
-				90D8C2DC15A5D2A900BB5914 /* BarMap.tmx in Resources */,
-				90D8C2DE15A5D38700BB5914 /* school.tmx in Resources */,
+				90D8C2E815A5DABF00BB5914 /* BarMap.tmx in Resources */,
+				90D8C2E915A5DABF00BB5914 /* GirlsHome.tmx in Resources */,
+				90D8C2EA15A5DABF00BB5914 /* home.tmx in Resources */,
+				90D8C2EB15A5DABF00BB5914 /* Job.tmx in Resources */,
+				90D8C2EC15A5DABF00BB5914 /* school.tmx in Resources */,
+				90D8C2EE15A5DB1B00BB5914 /* character-tiles.png in Resources */,
+				90D8C2F015A5DC4B00BB5914 /* Job.png in Resources */,
+				90D8C2F215A6C43500BB5914 /* World2.tmx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

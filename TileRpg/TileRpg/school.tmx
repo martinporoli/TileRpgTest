@@ -13,7 +13,13 @@
   </tile>
   <tile id="1">
    <properties>
-    <property name="Collidable" value=""/>
+    <property name="Collidable" value="True"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="Collidable" value="True"/>
+    <property name="SchoolTalk" value="True"/>
    </properties>
   </tile>
   <tile id="11">
@@ -27,6 +33,9 @@
    </properties>
   </tile>
  </tileset>
+ <tileset firstgid="201" name="character-tiles" tilewidth="32" tileheight="32">
+  <image source="character-tiles.png" width="96" height="96"/>
+ </tileset>
  <layer name="background" width="50" height="50">
   <data encoding="base64" compression="zlib">
    eJzt0c0KwjAQReFaqFtd2bqqP+//jkZIYBgaOjBeoXA+OFSrkqsOAwAAAAAAAAAAAIA9jz+llt0XTS27L5padl80tey+aGrZfdHUsvuiqWX3RVOzZ42lZ72O5vm59HLX7/27aan3/P6Wmj3rUlpLt9pau3aub1P7nN/fUrNnnX6Q399Ss2f1tk2d69G+x9H+j3lj1+web73Hvu73t9R659r2futIah+lxCeJ
@@ -34,7 +43,7 @@
  </layer>
  <layer name="Meta" width="50" height="50" opacity="0.5">
   <data encoding="base64" compression="zlib">
-   eJzt1MEKgCAMAFB/Vs9d+/suHTqoWJSOeA/GBEU3hKUEAAAAAAAAABBTeTFW6tWVGzlqH9tl/aSeKH1EuueL93Mj371nhj/9R62GMnBmdH+G3vzZz4g8dw9tcB+l
+   eJzt1MEKgCAMAFB/Vrt27e+7FHRIUSgb8R4MBWVuCEsJAAAAAAAAACCm8mB8qVVXrqxR+1gv+7OeZTBHhD4i5Xnj/VxZR/PM8Kf/uKuhdNzpPZ+hNX+2IyLP3R1DfiAM
   </data>
  </layer>
  <objectgroup name="Objects" width="50" height="50">
@@ -44,4 +53,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="foreground" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztziEBAAAIA7D3j0YqzBNgMFuCJQAAAAAAAAAAcDffAYBawN0Ayw==
+  </data>
+ </layer>
 </map>

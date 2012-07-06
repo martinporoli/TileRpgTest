@@ -70,9 +70,9 @@
    eJztzqERADAIADGWhev+E9QzAAgS9+4jAAAAgCuq9Vu5AABgWm4PAAAADPnLWQE0
   </data>
  </layer>
- <layer name="Meta" width="50" height="50" opacity="0.59">
+ <layer name="Meta" width="50" height="50">
   <data encoding="base64" compression="zlib">
-   eJztlksOwyAMRH3iptu2u7YHr7KohCIM9hiDQTwJJUoMnuFPRHQkJQqIliN51sq1Xos+4PKU2s3l5eJLcbl3S9F4rOmQUMstaUfjQ0vPteG1HqOtcYQVPGw2m80KtLhreBaLjyhYfEQC8eENMpe0PnqQ03tjviPaevrQxrX0MWLvkWpDYs+4D83vYwTRfXidg9acXkQYjxYerT64vu597rfwkfvHffdipvEotTVifZTuFqj/Uh9LYqPAaZP4GLXH5ij5qN0pc9ofl3rWM0VaT9JOyYc3V+1Pwn2ge2jPuWUZD23b6D1WMi9rezI6HtyeKtWnRXO2aHLUYs9/7yTuTlh/pe1JtWj7Cl0fvXxoiqUumkvjcSbQNReRVbys4GN2/X8s51I0ZvMg2etnINX5HaZCzospKRF8tJgH1nuAlVb5fgVJyXA=
+   eJztltsKwyAMhvPE22633W178FHYQIqJyR8PUfwgtLTR5PcQJSK6JhYFJJdr8izZuV2NMeDiSP3m4nL+kl/u3WMWjaU8NJRia/qx6LDSc2+02o/R9jjCCho2m81mBWrcNVqaR0cUPDoigehoDbKWrDp6kMv3wnxHcuupw+pXU8eI2qPNDfE9/N40v44RRNfR6hz0xmxFhPmoodGrgxvr3ud+DR25f9z3Vsw0H1JfI/aHdLdA9UtjrPGNApebRseoGptD0lG6U+Zyv5/aec8UbTtNP5KO1pxzfxCuA62hPdeWZz6sfaP3WM26LNVkdD64mqrNz4rlbLHEKPke/16J342w8Ur70+ZiHSt0f/TSYTFPWzSWReNMoHsuIqtoWUHH7Pn/8ZxL0ZhNg6bWz0Ca5+dnkXkylhJBR4114L0HeKkV7wsE58p4
   </data>
  </layer>
  <objectgroup name="Objects" width="50" height="50">
@@ -104,6 +104,11 @@
   <object name="SpawnPointSchool" x="1200" y="591">
    <properties>
     <property name="playerSpawnSchool" value=""/>
+   </properties>
+  </object>
+  <object name="SpawnPointJob" x="1263" y="1072">
+   <properties>
+    <property name="playerSpawnJob" value=""/>
    </properties>
   </object>
  </objectgroup>
