@@ -14,6 +14,44 @@
 #import "AppDelegate.h"
 
 #pragma mark - HelloWorldLayer
+@implementation Prat
+{
+    CGSize size;
+    CCLabelTTF *pratLabel;
+    CCSprite *pratBubbla;
+}
+-(id) init
+{
+    if (self = [super init])
+    {
+        
+        pratBubbla = [CCSprite spriteWithFile:@"storBubbla.png"];
+        [self addChild:pratBubbla];
+        pratBubbla.position = ccp(-300,-300);
+        pratLabel = [CCLabelTTF labelWithString:@"" dimensions:CGSizeMake(500, 175) hAlignment:CCTextAlignmentCenter lineBreakMode:CCLineBreakModeMiddleTruncation fontName:@"Verdana-Bold" fontSize:25.0];
+        pratLabel.color = ccc3(0, 0, 0);
+        [self addChild:pratLabel];
+
+    }
+    return self;
+}
+
+-(void)stringChanged:(NSString*)prat
+{
+    [pratLabel setString:prat];
+}
+-(void)showBubbla:(CGPoint)point;
+{
+    size = [[CCDirector sharedDirector] winSize];
+    pratBubbla.position = point;
+    pratLabel.position =point;
+}
+-(void)hideBubbla
+{
+    pratBubbla.position = ccp(-300,-300);
+    pratLabel.position = ccp(-100,-100);
+}
+@end
 @implementation StatLayer
 {
     CCLayer * layer;
@@ -58,8 +96,11 @@
     int playerWalk,jumpAble,chestMoney;
     int money,Int,Str,Cha,energy,days;
     StatLayer * stats;
+    Prat * prat;
     CGPoint viewPoint;
     CCMenu *menu;
+    CGSize size;
+    
 }
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
@@ -85,20 +126,17 @@
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if( (self=[super init]) ) {
         
-        CCLabelTTF *newGame = [CCLabelTTF labelWithString:@"New Game" fontName:@"Helvetica-Bold" fontSize:45];
-        CCLabelTTF *loadGame = [CCLabelTTF labelWithString:@"Load Game" fontName:@"Helvetica-Bold" fontSize:45];
-        CCMenuItemLabel *item1 = [CCMenuItemLabel itemWithLabel:newGame target:self selector:@selector(startGame:)];
-        CCMenuItemLabel *item2 = [CCMenuItemLabel itemWithLabel:loadGame target:self selector:@selector(loadGame:)];
+        CCMenuItem *item1 = [CCMenuItemImage itemWithNormalImage:@"newGame.png" selectedImage:@"newGame2.png" target:self selector:@selector(newGame:)];
+        CCMenuItem *item2 = [CCMenuItemImage itemWithNormalImage:@"loadGame.png" selectedImage:@"loadGame2.png" target:self selector:@selector(loadGame:)];
         menu = [CCMenu menuWithItems:item1, item2, nil];
         [menu alignItemsVertically];
         [self addChild:menu];
-        
         
     }
 	return self;
 }
 
--(void)startGame:(id)sender{
+-(void)newGame:(id)sender{
     money=0;
     Int=0;
     Str=0;
@@ -108,6 +146,8 @@
     
     stats = [StatLayer node];
     [self addChild:stats];
+    prat = [Prat node];
+    [self addChild:prat];
     tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"World1.tmx"];
     background = [tileMap layerNamed:@"background"];
     foreground = [tileMap layerNamed:@"foreground"];
@@ -131,7 +171,7 @@
     [self removeChild:menu cleanup:YES];
 }
 -(void)loadGame:(id)sender{
-    //code goes here
+    NSLog(@"load the fuckin game");
 }
 
 -(void)loadWorld:(NSString*)world:spawn
@@ -191,6 +231,7 @@
     viewPoint = ccpSub(centerOfView, actualPosition);
     self.position = viewPoint;
     [stats showRuta:ccp(x+winSize.width/3,y+winSize.height/3):energy:money:Int:Str:Cha:days];
+    [prat showBubbla:ccp(x-winSize.width/4+20,y+winSize.height/4+50)];
 }
 
 -(void) registerWithTouchDispatcher
@@ -311,11 +352,7 @@
             }
             NSString *work2 = [properties valueForKey:@"WorkTalk"];
             if (work2 && [work2 compare:@"True"] == NSOrderedSame) {
-                if(energy>19)
-                {
-                    energy-=20;
-                    money+=(Str/4)+40;
-                }
+
             }
             NSString *study = [properties valueForKey:@"study"];
             if (study && [study compare:@"True"] == NSOrderedSame) {
