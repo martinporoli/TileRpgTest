@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="32" tileheight="32">
  <tileset firstgid="1" name="Job" tilewidth="32" tileheight="32">
-  <image source="Job.png" width="320" height="320"/>
+  <image source="../../Job.png" width="320" height="320"/>
  </tileset>
  <tileset firstgid="101" name="meta-tiles" tilewidth="32" tileheight="32">
   <image source="meta-tiles.png" width="320" height="320"/>
   <tile id="0">
    <properties>
-    <property name="Collidable" value="True"/>
+    <property name="" value=""/>
     <property name="Work" value="True"/>
    </properties>
   </tile>
@@ -16,20 +16,11 @@
     <property name="Collidable" value="True"/>
    </properties>
   </tile>
-  <tile id="2">
-   <properties>
-    <property name="Collidable" value="True"/>
-    <property name="WorkTalk" value="True"/>
-   </properties>
-  </tile>
   <tile id="11">
    <properties>
     <property name="OutJob" value="True"/>
    </properties>
   </tile>
- </tileset>
- <tileset firstgid="201" name="character-tiles" tilewidth="32" tileheight="32">
-  <image source="character-tiles.png" width="96" height="96"/>
  </tileset>
  <layer name="background" width="50" height="50">
   <data encoding="base64" compression="zlib">
@@ -38,7 +29,7 @@
  </layer>
  <layer name="Meta" width="50" height="50" opacity="0.5">
   <data encoding="base64" compression="zlib">
-   eJzt1LsKgDAMBdD+rHX1/ycXhWzWRzWVcyDQIUMuDSkFAAAAAAAAALijfj3AQ7LmqBcqo7/liOYTvVnEuaaG9wg5evS/Je7K0X9k36vW2UbIsdey1Qj3agXRWRmQ
+   eJzt1DEOgCAMBVAuK7P3n1gcumkEsZD3kp8wdGhDoRQAAAAAAAAAoEf9u4FBss5RXySj3eYYXTtb7Ot4cF5hji/qZ4m7cncf2fdql/cRc15Z4b9q+0sZKQ==
   </data>
  </layer>
  <objectgroup name="Objects" width="50" height="50">
@@ -48,9 +39,4 @@
    </properties>
   </object>
  </objectgroup>
- <layer name="foreground" width="50" height="50">
-  <data encoding="base64" compression="zlib">
-   eJztziEBAAAIA7D3z0YozBNgMFuCJQAAAAAAAAAAcDffAYBayf0AzQ==
-  </data>
- </layer>
 </map>
