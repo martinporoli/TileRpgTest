@@ -16,6 +16,11 @@
     <property name="Collidable" value="True"/>
    </properties>
   </tile>
+  <tile id="3">
+   <properties>
+    <property name="stopTalk" value="True"/>
+   </properties>
+  </tile>
   <tile id="11">
    <properties>
     <property name="OutGirlHome" value="True"/>
@@ -32,7 +37,7 @@
  </layer>
  <layer name="Meta" width="50" height="50" opacity="0.49">
   <data encoding="base64" compression="zlib">
-   eJzt0zEKwCAMBdBcts69/+Si0KW1OCXyHvwp009IBAAAAAAAAABAbm2RKk7q8XTFGT3+zrL52nu1HjuzbN7uUfE/Zu6RCn/eAbU+EAQ=
+   eJzt0zEKgDAQBMD7rJLS/1cSiI0oglU2zMByxVVbbBUAAAAAAAAAwNz2j6RYqUfXxt0qu0fXbjetx1OXqrwef36zedtB4j6uHCMJOz8B3dgRpA==
   </data>
  </layer>
  <objectgroup name="Objects" width="50" height="50">

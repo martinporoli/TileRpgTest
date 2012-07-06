@@ -11,6 +11,11 @@
     <property name="Drinking" value="True"/>
    </properties>
   </tile>
+  <tile id="3">
+   <properties>
+    <property name="stopTalk" value="True"/>
+   </properties>
+  </tile>
   <tile id="11">
    <properties>
     <property name="outBar" value="True"/>
@@ -38,7 +43,7 @@
  </layer>
  <layer name="Meta" width="20" height="20" opacity="0.34">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUkALkiMSkmocOZIlQg8s8bOaDzBNEkifXvMGsDhebVPOwxSMlcUyM+8gBIDNkoJha5mFj4wIA+g8FcA==
+   eJxjYBgFo2AUkALkiMSkmgcDIlBaFo8aQuZhMx9kniCSPLnmIbtRhIA6Ys1DN4tc83CxSTUPWzxSEsfEuI8cADJDBoqpZR42Ni4AAKI+BcA=
   </data>
  </layer>
  <objectgroup name="Objects" width="20" height="20">

@@ -19,32 +19,55 @@
     CGSize size;
     CCLabelTTF *pratLabel;
     CCSprite *pratBubbla;
+    CCMenu * pratMenu;
+    CCLabelTTF *Op1;
+    CCLabelTTF *Op2;
 }
 -(id) init
 {
     if (self = [super init])
     {
-        
         pratBubbla = [CCSprite spriteWithFile:@"storBubbla.png"];
         [self addChild:pratBubbla];
         pratBubbla.position = ccp(-300,-300);
-        pratLabel = [CCLabelTTF labelWithString:@"" dimensions:CGSizeMake(500, 175) hAlignment:CCTextAlignmentCenter lineBreakMode:CCLineBreakModeMiddleTruncation fontName:@"Verdana-Bold" fontSize:25.0];
+        pratLabel = [CCLabelTTF labelWithString:@"" dimensions:CGSizeMake(500, 175) hAlignment:CCTextAlignmentCenter lineBreakMode:CCLineBreakModeMiddleTruncation fontName:@"Helvetica-Bold" fontSize:25.0];
         pratLabel.color = ccc3(0, 0, 0);
         [self addChild:pratLabel];
-
+        Op1 = [CCLabelTTF labelWithString:@"" fontName:@"Helvetica-Bold" fontSize:25];
+        Op2 = [CCLabelTTF labelWithString:@"" fontName:@"Helvetica-Bold" fontSize:25];
+        Op1.color=ccc3(255,0,0);
+        Op2.color=ccc3(255,0,0);
+        CCMenuItem *item1 = [CCMenuItemLabel itemWithLabel:Op1 target:self selector:@selector(Option1:)];
+        CCMenuItem *item2 = [CCMenuItemLabel itemWithLabel:Op2 target:self selector:@selector(Option2:)];
+        pratMenu = [CCMenu menuWithItems:item1, item2, nil];
+        [pratMenu alignItemsVertically];
+        [self addChild:pratMenu];
+        pratMenu.position=ccp(-500,-500);
     }
     return self;
 }
 
--(void)stringChanged:(NSString*)prat
+-(void)Option1:(id)sender{
+    NSLog(@"Option 1");
+}
+-(void)Option2:(id)sender{
+    NSLog(@"Option 2");
+    
+}
+    
+
+-(void)stringChanged:(NSString*)prat:(NSString*)alt1:(NSString*)alt2
 {
     [pratLabel setString:prat];
+    [Op1 setString:alt1];
+    [Op2 setString:alt2];
 }
 -(void)showBubbla:(CGPoint)point;
 {
     size = [[CCDirector sharedDirector] winSize];
     pratBubbla.position = point;
     pratLabel.position =point;
+    pratMenu.position = ccp(size.width/2,size.height/2);
 }
 -(void)hideBubbla
 {
@@ -148,7 +171,7 @@
     [self addChild:stats];
     prat = [Prat node];
     [self addChild:prat];
-    tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"World1.tmx"];
+    tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"World2.tmx"];
     background = [tileMap layerNamed:@"background"];
     foreground = [tileMap layerNamed:@"foreground"];
     meta = [tileMap layerNamed:@"Meta"];
@@ -158,7 +181,7 @@
     
     CCTMXObjectGroup *objects = [tileMap objectGroupNamed:@"Objects"];
     NSAssert(objects != nil, @"'Objects' object group not found");
-    NSMutableDictionary *spawnPoint = [objects objectNamed:@"SpawnPoint"];        
+    NSMutableDictionary *spawnPoint = [objects objectNamed:@"SpawnPointJob"];        
     NSAssert(spawnPoint != nil, @"SpawnPoint object not found");
     int x = [[spawnPoint valueForKey:@"x"] intValue];
     int y = [[spawnPoint valueForKey:@"y"] intValue];
@@ -231,7 +254,6 @@
     viewPoint = ccpSub(centerOfView, actualPosition);
     self.position = viewPoint;
     [stats showRuta:ccp(x+winSize.width/3,y+winSize.height/3):energy:money:Int:Str:Cha:days];
-    [prat showBubbla:ccp(x-winSize.width/4+20,y+winSize.height/4+50)];
 }
 
 -(void) registerWithTouchDispatcher
@@ -246,6 +268,16 @@
 }
 
 -(void)setPlayerPosition:(CGPoint)position {
+    
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    
+    int x = MAX(position.x, winSize.width / 2);
+    int y = MAX(position.y, winSize.height / 2);
+    x = MIN(x, (tileMap.mapSize.width * tileMap.tileSize.width) 
+            - winSize.width / 2);
+    y = MIN(y, (tileMap.mapSize.height * tileMap.tileSize.height) 
+            - winSize.height/2);
+    
 	CGPoint tileCoord = [self tileCoordForPosition:position];
     int tileGid = [meta tileGIDAt:tileCoord];
     if (tileGid) {
@@ -352,7 +384,8 @@
             }
             NSString *work2 = [properties valueForKey:@"WorkTalk"];
             if (work2 && [work2 compare:@"True"] == NSOrderedSame) {
-
+                [prat showBubbla:ccp(x-winSize.width/4+30,y+winSize.height/4+60)];
+                [prat stringChanged:@"JOBBA BIATCH":@"Jobba hårt":@"Jobba inte så hårt"];
             }
             NSString *study = [properties valueForKey:@"study"];
             if (study && [study compare:@"True"] == NSOrderedSame) {
@@ -388,6 +421,10 @@
                     energy-=20;
                     Str+=5;
                 }
+            }
+            NSString *stopTalk = [properties valueForKey:@"stopTalk"];
+            if (stopTalk && [stopTalk compare:@"True"] == NSOrderedSame) {
+                [prat hideBubbla];
             }
             NSString *sleep = [properties valueForKey:@"sleep"];
             if (sleep && [sleep compare:@"True"] == NSOrderedSame) {

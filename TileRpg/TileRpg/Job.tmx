@@ -9,6 +9,7 @@
    <properties>
     <property name="Collidable" value="True"/>
     <property name="Work" value="True"/>
+    <property name="stopTalk" value="True"/>
    </properties>
   </tile>
   <tile id="1">
@@ -20,6 +21,11 @@
    <properties>
     <property name="Collidable" value="True"/>
     <property name="WorkTalk" value="True"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="stopTalk" value="True"/>
    </properties>
   </tile>
   <tile id="11">
@@ -38,7 +44,7 @@
  </layer>
  <layer name="Meta" width="50" height="50" opacity="0.5">
   <data encoding="base64" compression="zlib">
-   eJzt1LsKgDAMBdD+rHX1/ycXhWzWRzWVcyDQIUMuDSkFAAAAAAAAALijfj3AQ7LmqBcqo7/liOYTvVnEuaaG9wg5evS/Je7K0X9k36vW2UbIsdey1Qj3agXRWRmQ
+   eJzt1MsKgCAQBVB/1mrZ/68iMAoxogc0xTkwiDKLOyimBAAAAAAAAADc0b0d4CFR5+guVER/m2M2lLWv9q3eaLa5clqz5+q81R9JK1d9D0f9EWzfyt4d5EZvNGeyfWGOpcZSX/ivJkmiGzA=
   </data>
  </layer>
  <objectgroup name="Objects" width="50" height="50">
