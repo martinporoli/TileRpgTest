@@ -369,7 +369,7 @@
             if (drink && [drink compare:@"True"] == NSOrderedSame) {
                 if(energy>19)
                 {
-                    energy-=20;
+                     [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"GubbeDricker.png"]];                    energy-=20;
                     Cha+=5;
                 }
             }
@@ -377,7 +377,7 @@
             if (work && [work compare:@"True"] == NSOrderedSame) {
                 if(energy>19)
                 {
-                    energy-=20;
+                     [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"GubbePluggar.png"]];                    energy-=20;
                     money+=(Int/2)+20;
                 }
             }
@@ -390,7 +390,7 @@
             if (study && [study compare:@"True"] == NSOrderedSame) {
                 if(energy>19)
                 {
-                    energy-=20;
+                     [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"GubbePluggar.png"]];                    energy-=20;
                     Int+=5;
                 }
             }
@@ -416,6 +416,7 @@
             if (workOut && [workOut compare:@"True"] == NSOrderedSame) {
                 if(energy>19)
                 {
+                    [player setTexture:[[CCTextureCache sharedTextureCache] addImage:@"GubbeTranar.png"]];                   
                     energy-=20;
                     Str+=5;
                 }

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		90B3B53E15A6F42A00CB17A7 /* GubbePluggar.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B3B53D15A6F42A00CB17A7 /* GubbePluggar.png */; };
+		90B3B54115A6F43400CB17A7 /* GubbeTranar.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B3B54015A6F43400CB17A7 /* GubbeTranar.png */; };
+		90B3B54315A6F43C00CB17A7 /* GubbeDricker.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B3B54215A6F43C00CB17A7 /* GubbeDricker.png */; };
+		90B3B54515A6F6AB00CB17A7 /* shop.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B3B54415A6F6AB00CB17A7 /* shop.png */; };
+		90B3B54715A6F6B200CB17A7 /* shop.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 90B3B54615A6F6B200CB17A7 /* shop.tmx */; };
 		90D8C0E715A4269C00BB5914 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90D8C0E615A4269C00BB5914 /* QuartzCore.framework */; };
 		90D8C0E915A4269C00BB5914 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90D8C0E815A4269C00BB5914 /* OpenGLES.framework */; };
 		90D8C0EB15A4269C00BB5914 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90D8C0EA15A4269C00BB5914 /* OpenAL.framework */; };
@@ -168,6 +173,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		90B3B53D15A6F42A00CB17A7 /* GubbePluggar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GubbePluggar.png; sourceTree = "<group>"; };
+		90B3B54015A6F43400CB17A7 /* GubbeTranar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GubbeTranar.png; sourceTree = "<group>"; };
+		90B3B54215A6F43C00CB17A7 /* GubbeDricker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GubbeDricker.png; sourceTree = "<group>"; };
+		90B3B54415A6F6AB00CB17A7 /* shop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shop.png; sourceTree = "<group>"; };
+		90B3B54615A6F6B200CB17A7 /* shop.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = shop.tmx; sourceTree = "<group>"; };
 		90D8C0E215A4269C00BB5914 /* TileRpg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TileRpg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90D8C0E615A4269C00BB5914 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		90D8C0E815A4269C00BB5914 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -901,6 +911,7 @@
 				90D8C2C915A5D15900BB5914 /* bar-tiles.png */,
 				90D8C2CB15A5D15900BB5914 /* GirlHome.png */,
 				90D8C2CD15A5D15900BB5914 /* school.png */,
+				90B3B54415A6F6AB00CB17A7 /* shop.png */,
 				90D8C28115A4282D00BB5914 /* foregroundW1.png */,
 				90D8C2ED15A5DB1A00BB5914 /* character-tiles.png */,
 				90D8C2EF15A5DC4B00BB5914 /* Job.png */,
@@ -913,6 +924,12 @@
 				90D8C30315A6E05A00BB5914 /* Job.tmx */,
 				90D8C30415A6E05D00BB5914 /* school.tmx */,
 				90D8C2E515A5DABA00BB5914 /* home.tmx */,
+<<<<<<< HEAD
+				90B3B54615A6F6B200CB17A7 /* shop.tmx */,
+				90D8C2E615A5DABB00BB5914 /* Job.tmx */,
+				90D8C2E715A5DABD00BB5914 /* school.tmx */,
+=======
+>>>>>>> c2292c4cfb0de580324d6fa94250496968957cc7
 				90D8C2C015A5C05400BB5914 /* World1.tmx */,
 				90D8C2F115A6C43500BB5914 /* World2.tmx */,
 			);
@@ -927,6 +944,9 @@
 				90D8C2F515A6CC8B00BB5914 /* newGame.png */,
 				90D8C2F615A6CC8B00BB5914 /* newGame2.png */,
 				90D8C28915A4284A00BB5914 /* gubbe.png */,
+				90B3B53D15A6F42A00CB17A7 /* GubbePluggar.png */,
+				90B3B54215A6F43C00CB17A7 /* GubbeDricker.png */,
+				90B3B54015A6F43400CB17A7 /* GubbeTranar.png */,
 				90D8C28B15A4284A00BB5914 /* gubbeSidan.png */,
 				90D8C29715A4374600BB5914 /* gubbeSidan2.png */,
 				90D8C29815A4374600BB5914 /* gubbeSidanLeft.png */,
@@ -1034,11 +1054,20 @@
 				90D8C2F815A6CC8B00BB5914 /* loadGame2.png in Resources */,
 				90D8C2F915A6CC8B00BB5914 /* newGame.png in Resources */,
 				90D8C2FA15A6CC8B00BB5914 /* newGame2.png in Resources */,
+<<<<<<< HEAD
+				90D8C2FC15A6D59600BB5914 /* storBubbla.png in Resources */,
+				90B3B53E15A6F42A00CB17A7 /* GubbePluggar.png in Resources */,
+				90B3B54115A6F43400CB17A7 /* GubbeTranar.png in Resources */,
+				90B3B54315A6F43C00CB17A7 /* GubbeDricker.png in Resources */,
+				90B3B54515A6F6AB00CB17A7 /* shop.png in Resources */,
+				90B3B54715A6F6B200CB17A7 /* shop.tmx in Resources */,
+=======
 				90D8C30015A6DFA900BB5914 /* storBubbla.png in Resources */,
 				90D8C30515A6E06100BB5914 /* BarMap.tmx in Resources */,
 				90D8C30615A6E06100BB5914 /* GirlsHome.tmx in Resources */,
 				90D8C30715A6E06100BB5914 /* Job.tmx in Resources */,
 				90D8C30815A6E06100BB5914 /* school.tmx in Resources */,
+>>>>>>> c2292c4cfb0de580324d6fa94250496968957cc7
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
